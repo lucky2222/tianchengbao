@@ -1,0 +1,123 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib tagdir="/WEB-INF/tags/" prefix="ehang" %>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" session="false"%>
+<%@ taglib uri="/WEB-INF/taglib/ehangtaglib.tld" prefix="cc"%>
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>materials(steel pipe,steel sheet) leading supplier and manufacturer in china</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="keywords" content="register">
+	<meta name="description" content="register - Sino East Steel Enterprise Co., Ltd.">
+	
+
+	<script type="text/javascript" async="" src="${pageContext.request.contextPath}/business/bjs/index_files/ekrhsbwe.js">
+	</script><script type="text/javascript" async="" src="${pageContext.request.contextPath}/business/bjs/index_files/sgtracker.js">
+	</script><script async="" src="${pageContext.request.contextPath}/business/bjs/index_files/analytics.js">
+	</script><script type="text/javascript" src="${pageContext.request.contextPath}/business/bjs/index_files/jquery-1.9.0.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/business/bjs/index_files/jquery-migrate-1.0.0.js"></script> <!--jquery-1.9 使toggle控件无效，须加此js-->
+	<script type="text/javascript" src="${pageContext.request.contextPath}/business/bjs/index_files/jquery.jBox-2.2.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/business/bjs/index_files/common.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/business/bjs/index_files/loginbar.js"></script>
+	<script async="" src="${pageContext.request.contextPath}/business/bjs/index_files/analytics.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/business/bjs/index_files/phpserializer.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/business/bjs/index_files/utf.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/business/bjs/index_files/jquery.tree.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/business/bjs/check.js"></script>
+	
+		
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/business/bcss/base.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/business/bcss/common.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/business/bcss/page.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/business/bcss/jbox.css">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/business/bcss/treeMenu.css">
+	
+<style>
+#category_tree{display:block;}
+.categories_list_dl dd a {
+    color: #333;
+    padding: 1px 0;
+}
+</style>
+
+
+</head>
+<body class="bodyBgF3" style="zoom: 1;">
+
+<div class="body_page">
+	<%@ include file="../header2.jsp"%>
+
+
+	<div class="clr">&nbsp;</div>
+
+</div>
+	<%@ include file="../footer2.jsp"%>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42214798-1', 'Sino-Sources');
+  ga('send', 'pageview');
+</script>
+
+<!-- Start of SkyGlue Code -->
+<script type="text/javascript">
+	var _sgq = _sgq || [];
+	_sgq.push(['setSgAccount', 'ekrhsbwe']);
+
+	setTimeout(function() {
+	var sg = document.createElement('script'); sg.type = 'text/javascript'; sg.async = true;
+	sg.src = ("https:" == document.location.protocol ? "https://dc" : "http://cdn0") + ".skyglue.com/sgtracker.js";
+	var s = document.getElementsByTagName('script')[0]; 
+	s.parentNode.insertBefore(sg, s);
+	}, 1);
+	
+	function inquiredSend()
+	{
+// 	    try{
+// 		ga('send', 'event', 'contact us', 'contact us:submit', 'contact us:submit:normal');
+// 		}catch(e){}
+
+// 		var upload_file='';	
+// 		for(var i in uploadAttachArr){		
+// 			var tmpStr = '';
+// 			if(uploadAttachArr[i]){
+// 				tmpStr = '{"content_name":"'+uploadAttachArr[i].content_name+'","content_file_name":"'+uploadAttachArr[i].content_file_name+'"}';
+// 				if(upload_file!=''){ tmpStr='|||'+tmpStr; }
+// 			}		
+// 			upload_file += tmpStr;
+// 		}	
+		
+		var tag =true;
+	    if(!validateEmail('email'))
+	    {
+	        tag=false;
+	    }
+	    
+	    if(document.getElementById("quantity")!=undefined){
+		    if(!validateNum('quantity'))
+		    {
+		        tag=false;
+		    }
+		}
+		if(!validateStr('companyID','Please input company name'))
+	    {
+	        tag=false;
+	    }
+		if(!validateStr('title','Please input title name'))
+	    {
+	        tag=false;
+	    }
+		if(!validateStr('staffID','Please input your telephone number'))
+	    {
+	        tag=false;
+	    }
+        return tag;
+	}	
+</script>
+<!-- End of SkyGlue Code -->
+</body></html>

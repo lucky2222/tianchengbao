@@ -1,0 +1,54 @@
+/* CSS Document */
+.col-xs-3{
+position: relative;
+min-height: 0px;
+padding-right: 0px;
+padding-left: 0px;
+}
+.text {    height: 28.8px;    overflow: hidden;      word-wrap: break-word;}
+a:link{text-decoration:none ; color:#999 ;}
+a:visited {text-decoration:none ; color:#999;}
+a:hover {text-decoration:none ; color:#999;}
+a:active {text-decoration:none ; color:#999;} 
+.thumbnail {
+display: block;
+padding: 12px;
+margin-bottom: 0px;
+margin-top:2px;
+line-height: 1.42857143;
+background-color: #fff;
+border: 0px solid #ddd;
+border-radius: 4px;
+-webkit-transition: border .2s ease-in-out;
+-o-transition: border .2s ease-in-out;
+transition: border .2s ease-in-out;
+}
+
+.rate{
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	border: 3px solid #febab1;
+	left: 10px;
+	top: 10px;
+}
+
+.foot-100{
+border: 2px solid #23D803;border-radius:2%;text-align:center;margin:6px 4px 4px 12px;
+}
+.img-style{
+width:100%;max-height:180px
+}
+i{
+color:#999999;margin:0 10px
+}
+.rate h4{
+text-align: center;color: #fe7563;margin-top: 7px;margin-bottom: 2px;
+}
+.shouyi{
+text-align: center;color: #999
+}
+.rate+div{
+padding: 0 15px 0 80px;margin-left:10px
+}

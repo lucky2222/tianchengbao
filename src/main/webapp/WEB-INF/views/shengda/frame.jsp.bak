@@ -1,0 +1,883 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" session="false"%>
+<%@ taglib uri="/WEB-INF/taglib/ehangtaglib.tld" prefix="cc"%>
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Chinese Goods</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="keywords" content="register">
+	<meta name="description" content="register - Sino East Steel Enterprise Co., Ltd.">
+	
+<!-- 暂时保留老网站的css和js 开始-->
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+	<link href="${pageContext.request.contextPath}/business/bcss/style.css" rel="stylesheet" type="text/css" />
+	<link href="${pageContext.request.contextPath}/business/bcss/index.compact.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="${pageContext.request.contextPath}/business/bjs/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/business/bjs/jquery.SuperSlide.2.1.js"></script>
+<!-- 暂时保留老网站的css和js 结束-->
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/business/bcss/index.compact.css">
+	<script type="text/javascript" async="" src="${pageContext.request.contextPath}/business/bjs/index_files/ekrhsbwe.js">
+	</script><script type="text/javascript" async="" src="${pageContext.request.contextPath}/business/bjs/index_files/sgtracker.js">
+	</script><script async="" src="${pageContext.request.contextPath}/business/bjs/index_files/analytics.js">
+	</script><script type="text/javascript" src="${pageContext.request.contextPath}/business/bjs/index_files/jquery-1.9.0.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/business/bjs/index_files/jquery-migrate-1.0.0.js"></script> <!--jquery-1.9 使toggle控件无效，须加此js-->
+	<script type="text/javascript" src="${pageContext.request.contextPath}/business/bjs/index_files/jquery.jBox-2.2.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/business/bjs/index_files/common.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/business/bjs/index_files/loginbar.js"></script>
+<style>
+#category_tree{display:block;}
+
+</style>
+
+
+</head>
+<body class="bodyBgF3" style="zoom: 1;">
+
+<div class="body_page">
+<!--BEGIN:header-->
+<!--BEGIN:top_nav-->
+<div class="top_nav_main">
+	<div class="top_nav">
+	    <p class="top_nav_l">Welcome to goods.com!</p>
+	    <ul class="top_nav_r">
+        <div class="signOut" id="spLogout" style="display:none;">
+        <span class="pr5" id="spUserName"></span>, <a href="http://usercenter.Sino-Sources/ajax/okorderexit.php?code=bXRhcVNhL2E5eTFIZWVXOTAvQzlrY3VKd0VodWVLSU4yZFdZeWQ1LzE2K3dtbXQ3MTZqRjFDT2xFRHRuNXhpbFNXQjNLTVhoUytRZ2hnVGU5czNleFJBclp0RytwYWNMOXlhNXVaMmNtdldlakhB" id="btnLogout" rel="nofollow">Sign Out</a>
+       <span class="t_line">|</span>
+        </div>
+        <span id="spLogin" style="">
+        <li><a href="http://usercenter.Sino-Sources/login/login.php?code=bXRhcVNhL2E5eTFIZWVXOTAvQzlrY3VKd0VodWVLSU4yZFdZeWQ1LzE2K3dtbXQ3MTZqRjFDT2xFRHRuNXhpbFNXQjNLTVhoUytRZ2hnVGU5czNleFJBclp0RytwYWNMOXlhNXVaMmNtdldlakhB" class="fb" rel="nofollow">Sign In</a><span class="t_line">|</span></li>
+        <li><a href="http://usercenter.Sino-Sources/cust/reg.php?code=bXRhcVNhL2E5eTFIZWVXOTAvQzlrY3VKd0VodWVLSU4yZFdZeWQ1LzE2K3dtbXQ3MTZqRjFDT2xFRHRuNXhpbFNXQjNLTVhoUytRZ2hnVGU5czNleFJBclp0RytwYWNMOXlhNXVaMmNtdldlakhB" class="fb" rel="nofollow">Join Now FREE!</a><span class="t_line">|</span></li>
+        </span>
+        <li><a href="http://www.Sino-Sources/info/" target="_blank">OKorder Info</a><span class="t_line">|</span></li>
+		<li><a href="http://www.Sino-Sources/app.html" rel="nofollow">App</a><span class="t_line">|</span></li>
+        <li><a href="http://usercenter.Sino-Sources/" rel="nofollow">My OKorder</a><span class="t_line">|</span></li>
+        <li id="barMyFav" class="none" style="display: none;"><a href="http://usercenter.Sino-Sources/fav/favp.php" rel="nofollow">My Favorites<em id="spFavNum"></em></a><span class="t_line">|</span></li>
+        <li><a href="http://www.Sino-Sources/service/help.html" rel="nofollow">Help Center</a></li>
+        <li class="top_nav_last none" id="barSupplyJoin" style="display: list-item;"><span class="t_line">|</span><a href="http://seller.Sino-Sources/">供应商加盟</a></li>
+	    <li><span class="t_line">|</span><a href="http://es.Sino-Sources/" target="_blank">Español</a></li>
+        </ul>
+        
+	</div>
+</div>
+<!--END:top_nav-->
+<!--BEGIN:search-->
+<div class="header_main">
+	<div class="logo">
+    <a href="./index_files/index.html"> 
+<img src="${pageContext.request.contextPath}/business/bimages/header.png" width="247" height="127" alt=" OKorder:Materials &amp; Equipment Supplier &amp; Manufacturer." title="Materials &amp; Equipment Supplier &amp; Manufacturer."><span style="display:none">Sino-Sources</span></a>
+</div>
+    
+
+        <div class="buyingRequest"><a href="http://www.Sino-Sources/###" name="BtnBuyRequest" rel="nofollow">Post a Buying Request!</a><br>
+<a href="http://www.Sino-Sources/app.html" rel="nofollow" class="downapp">Get the Mobile App</a></div>
+    
+    <div class="search">
+    	<form name="topSearchForm" id="topSearchForm" method="GET" action="http://www.Sino-Sources/products/searchresult.html">
+		<input id="topSearchProdClassId" name="ok_prod_class_id" type="hidden" value="0">
+    	<div class="search_bar">
+        	<div class="search_bar_type" id="search_bar_type">
+            	<p class="search_bar_type_value">
+                	<span id="topSearchProdClassName">All Categories</span>
+                    <b class="search_bar_type_icon ui_icon down"></b>
+                </p>
+                <ul class="search_bar_type_options" id="topSearchProdClassList">
+                	<li><a href="javascript:void(0);" rel="nofollow" classid="0">All Categories</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="3">Automotive &amp; Motorcycle</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="1057">Chemical</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="1378">Construction &amp; Real Estate</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="3268">Consumer Electronics</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="4180">Electrical Equipment &amp; Supplies</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="4630">Electronic Components &amp; Supplies</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="4866">Energy Products</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="18400">Furniture &amp; Décor</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="5948">Hardware</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="6079">Healthcare</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="6339">Home &amp; Garden</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="7719">Home Appliances</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="8627">Hydraulic &amp; Pneumatic</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="8752">Lights &amp; Lighting</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="9656">Machinery &amp; Equipment</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="12128">Measurement &amp; Analysis Instruments</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="12570">Mechanical Parts &amp; Fabrication Services</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="13385">Minerals &amp; Metallurgy</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="14676">Packaging &amp; Printing</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="14968">Rubber &amp; Plastics</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="15120">Security &amp; Protection</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="15589">Service Equipment</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="15791">Sports &amp; Entertainment</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="16763">Telecommunications</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="16896">Textiles &amp; Leather Products</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="17178">Tools &amp; Accessories</a></li>
+										<li><a href="javascript:void(0);" rel="nofollow" classid="17711">Transportation</a></li>
+					                </ul>
+            </div>
+            <div class="search_bar_main" id="search_bar_main" style="margin-left: 121px;">
+            	<input id="topSearchInput" type="text" name="keyword" value="pvc window and door" class="text_search" autocomplete="off" x-webkit-speech="x-webkit-speech" x-webkit-grammar="builtin:translate" lang="en" onfocus="if(this.value==&#39;pvc window and door&#39;){this.value=&#39;&#39;}" onblur="if(this.value==&#39;&#39;){this.value=&#39;pvc window and door&#39;}" style="width: 482px;">
+                <ul class="search_bar_main_list none" id="search_bar_main_list" style="width: 500px;"></ul>
+            </div>
+        </div>
+        <input type="button" value="Search" class="search_bar_btn" id="topSearchInput" onclick="javascript:submitTopSearch();">
+        <p class="search_bar_popuplar"><a href="http://www.Sino-Sources/products/advsearch.php?keyword=&matchType=&ok_prod_class_id=" rel="nofollow" class="fr">Advanced Search</a>Popular Searches:
+        <a href="http://www.Sino-Sources/doors-windows/pc1815.html">pvc window and door</a>,
+        <a href="http://www.Sino-Sources/ceiling-lights/pl8841.html">ceiling light</a>,
+        <a href="http://www.Sino-Sources/ceiling-tile/pc1710.html">ceiling panel</a>,
+        <a href="http://www.Sino-Sources/carpet-rug/pl16994.html">carpet rug mat</a>,
+        <a href="http://www.Sino-Sources/bedroom-furniture/pc18710.html">bedroom furniture set</a></p>
+        </form>
+    </div>
+</div>
+<!--END:search--><!--END:header-->
+
+<!--BEGIN:main_content-->
+<script type="text/javascript" src="${pageContext.request.contextPath}/business/bjs/index_files/lrtk.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/business/bjs/index_files/jquery.nivo.slider.pack.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#slider').nivoSlider({
+            effect:'fade',
+            pauseTime:4000
+            });
+    });
+</script>
+<!--BEGIN:main_content-->
+<div class="w1200 clearfix mb10">
+<!--BEGIN:main_content left-->
+<div class="left_index">
+    <!--BEGIN:categories-->
+    <div class="categories pr mb10">
+        <h3 class="categories_tit"><a href="http://www.Sino-Sources/products.html" target="_blank">Categories</a></h3>
+        <ul class="categories_list" id="categories_list">
+                                    <li>
+                <h2><a href="http://www.Sino-Sources/solar-energy-products/pc4967.html" title="Solar Energy Products" target="_blank">Solar Energy Products</a></h2>
+                <div class="categories_list_nav clearfix" style="display: none;">
+                    <dl class="categories_list_dl">
+                        <dt>Solar Energy Products</dt>
+                        <dd>                   
+                                                                                                                            <h3><a href="http://www.Sino-Sources/solar-cells/pl4972.html" title="Solar Cells" target="_blank">Solar Cells</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/solar-chargers/pl4981.html" title="Solar Chargers" target="_blank">Solar Chargers</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/solar-collectors/pl4987.html" title="Solar Collectors" target="_blank">Solar Collectors</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/solar-controllers/pl4991.html" title="Solar Controllers" target="_blank">Solar Controllers</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/solar-energy-systems/pl4995.html" title="Solar Energy Systems" target="_blank">Solar Energy Systems</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/solar-inverter/pl4997.html" title="Solar Inverter" target="_blank">Solar Inverter</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/solar-light/pl5006.html" title="Solar Light" target="_blank">Solar Light</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/solar-mounting-system/pl4969.html" title="Solar Mounting System" target="_blank">Solar Mounting System</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/solar-panels/pl5012.html" title="Solar Panels" target="_blank">Solar Panels</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/solar-pump/pl5017.html" title="Solar Pump" target="_blank">Solar Pump</a></h3>
+                                                                                                                                                                                                                                                                                                                                						
+                                                                                    <a href="http://www.Sino-Sources/solar-energy-products/pc4967.html" class="fb" target="_blank">See all categories</a>					
+                                                    </dd>
+                    </dl>
+                </div>
+            </li>
+             		                             <li>
+                <h2><a href="http://www.Sino-Sources/steel/pc14370.html" title="Steel" target="_blank">Steel</a></h2>
+                <div class="categories_list_nav clearfix" style="display: none;">
+                    <dl class="categories_list_dl">
+                        <dt>Steel</dt>
+                        <dd>                   
+                                                                                                                            <h3><a href="http://www.Sino-Sources/other-steel-products/pl14372.html" title="Other Steel Products" target="_blank">Other Steel Products</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/silicon-steel/pl14379.html" title="Silicon Steel" target="_blank">Silicon Steel</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/special-steel/pl14383.html" title="Special Steel" target="_blank">Special Steel</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/stainless-steel/pc14404.html" title="Stainless Steel" target="_blank">Stainless Steel</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/steel-coils/pl14456.html" title="Steel Coils" target="_blank">Steel Coils</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/steel-pipes/pl14457.html" title="Steel Pipes" target="_blank">Steel Pipes</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/steel-profiles/pc14463.html" title="Steel Profiles" target="_blank">Steel Profiles</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/steel-rails/pl14518.html" title="Steel Rails" target="_blank">Steel Rails</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/steel-rebars/pl14526.html" title="Steel Rebars" target="_blank">Steel Rebars</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/steel-sheets/pl14530.html" title="Steel Sheets" target="_blank">Steel Sheets</a></h3>
+                                                                                                                                                                                                                                                                                                                                						
+                                                                                    <a href="http://www.Sino-Sources/steel/pc14370.html" class="fb" target="_blank">See all categories</a>					
+                                                    </dd>
+                    </dl>
+                </div>
+            </li>
+             		                             <li>
+                <h2><a href="http://www.Sino-Sources/aluminum/pc13395.html" title="Aluminum" target="_blank">Aluminum</a></h2>
+                <div class="categories_list_nav clearfix" style="display: none;">
+                    <dl class="categories_list_dl">
+                        <dt>Aluminum</dt>
+                        <dd>                   
+                                                                                                                            <h3><a href="http://www.Sino-Sources/aluminum-bars/pl13396.html" title="Aluminum Bars" target="_blank">Aluminum Bars</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/aluminum-coils/pl13399.html" title="Aluminum Coils" target="_blank">Aluminum Coils</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/aluminum-foils/pl13408.html" title="Aluminum Foils" target="_blank">Aluminum Foils</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/aluminum-pipes/pl13411.html" title="Aluminum Pipes" target="_blank">Aluminum Pipes</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/aluminum-profiles/pl13415.html" title="Aluminum Profiles" target="_blank">Aluminum Profiles</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/aluminum-sheets/pl13422.html" title="Aluminum Sheets" target="_blank">Aluminum Sheets</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/aluminum-strips/pl13430.html" title="Aluminum Strips" target="_blank">Aluminum Strips</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/aluminum-wire/pl13436.html" title="Aluminum Wire" target="_blank">Aluminum Wire</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/other-aluminum/pl13439.html" title="Other Aluminum" target="_blank">Other Aluminum</a></h3>
+                                                                						
+                                                                                    <a href="http://www.Sino-Sources/aluminum/pc13395.html" class="fb" target="_blank">See all categories</a>					
+                                                    </dd>
+                    </dl>
+                </div>
+            </li>
+             		                             <li>
+                <h2><a href="http://www.Sino-Sources/construction-machinery/pc10120.html" title="Construction Machinery" target="_blank">Construction Machinery</a></h2>
+                <div class="categories_list_nav clearfix" style="display: none;">
+                    <dl class="categories_list_dl">
+                        <dt>Construction Machinery</dt>
+                        <dd>                   
+                                                                                                                            <h3><a href="http://www.Sino-Sources/building-hoist/pl10129.html" title="Building Hoist" target="_blank">Building Hoist</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/concrete-machinery/pc10132.html" title="Concrete Machinery" target="_blank">Concrete Machinery</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/cranes/pc10199.html" title="Cranes" target="_blank">Cranes</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/earthmoving-machinery/pc10236.html" title="Earthmoving Machinery" target="_blank">Earthmoving Machinery</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/other-construction-machinery/pl10297.html" title="Other Construction Machinery" target="_blank">Other Construction Machinery</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/road-building-machinery/pc10252.html" title="Road Building Machinery" target="_blank">Road Building Machinery</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/suspended-platform/pl10298.html" title="Suspended Platform" target="_blank">Suspended Platform</a></h3>
+                                                                						
+                                                                                    <a href="http://www.Sino-Sources/construction-machinery/pc10120.html" class="fb" target="_blank">See all categories</a>					
+                                                    </dd>
+                    </dl>
+                </div>
+            </li>
+             		                             <li>
+                <h2><a href="http://www.Sino-Sources/formwork-scaffolding/pc2358.html" title="Formwork &amp; Scaffolding" target="_blank">Formwork &amp; Scaffolding</a></h2>
+                <div class="categories_list_nav clearfix" style="display: none;">
+                    <dl class="categories_list_dl">
+                        <dt>Formwork &amp; Scaffolding</dt>
+                        <dd>                   
+                                                                                                                            <h3><a href="http://www.Sino-Sources/bridge-girder-equipment-formwork/pc2362.html" title="Bridge Girder Equipment &amp; Formwork" target="_blank">Bridge Girder Equipment &amp; Formwork</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/level-structure-support-system/pc2387.html" title="Level Structure Support System" target="_blank">Level Structure Support System</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/platform-system/pc2418.html" title="Platform System" target="_blank">Platform System</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/private-construction-formwork-system/pc2452.html" title="Private Construction Formwork System" target="_blank">Private Construction Formwork System</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/scaffolding-accessories/pl2486.html" title="Scaffolding Accessories" target="_blank">Scaffolding Accessories</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/vertical-structure-support-system/pc2491.html" title="Vertical Structure Support System" target="_blank">Vertical Structure Support System</a></h3>
+                                                                						
+                                                                                    <a href="http://www.Sino-Sources/formwork-scaffolding/pc2358.html" class="fb" target="_blank">See all categories</a>					
+                                                    </dd>
+                    </dl>
+                </div>
+            </li>
+             		                             <li>
+                <h2><a href="http://www.Sino-Sources/material-handling-equipment/pc11100.html" title="Material Handling Equipment" target="_blank">Material Handling Equipment</a></h2>
+                <div class="categories_list_nav clearfix" style="display: none;">
+                    <dl class="categories_list_dl">
+                        <dt>Material Handling Equipment</dt>
+                        <dd>                   
+                                                                                                                            <h3><a href="http://www.Sino-Sources/cranes/pl11110.html" title="Cranes" target="_blank">Cranes</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/forklifts/pl11116.html" title="Forklifts" target="_blank">Forklifts</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/hand-carts-trolleys/pl11123.html" title="Hand Carts &amp; Trolleys" target="_blank">Hand Carts &amp; Trolleys</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/hoists/pl11125.html" title="Hoists" target="_blank">Hoists</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/lift-tables/pl11133.html" title="Lift Tables" target="_blank">Lift Tables</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/other-material-handling-equipment/pl11141.html" title="Other Material Handling Equipment" target="_blank">Other Material Handling Equipment</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/stacking-racks-shelves/pl11161.html" title="Stacking Racks &amp; Shelves" target="_blank">Stacking Racks &amp; Shelves</a></h3>
+                                                                						
+                                                                                    <a href="http://www.Sino-Sources/material-handling-equipment/pc11100.html" class="fb" target="_blank">See all categories</a>					
+                                                    </dd>
+                    </dl>
+                </div>
+            </li>
+             		                             <li>
+                <h2><a href="http://www.Sino-Sources/hardware/c5948.html" title="Hardware" target="_blank">Hardware</a></h2>
+                <div class="categories_list_nav clearfix" style="display: none;">
+                    <dl class="categories_list_dl">
+                        <dt>Hardware</dt>
+                        <dd>                   
+                                                                                                                            <h3><a href="http://www.Sino-Sources/abrasive-tools/pl5957.html" title="Abrasive Tools" target="_blank">Abrasive Tools</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/abrasives/pl5958.html" title="Abrasives" target="_blank">Abrasives</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/brackets/pl5963.html" title="Brackets" target="_blank">Brackets</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/chains/pl5966.html" title="Chains" target="_blank">Chains</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/clamps/pl5971.html" title="Clamps" target="_blank">Clamps</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/fasteners/pc5980.html" title="Fasteners" target="_blank">Fasteners</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/fence/pl6025.html" title="Fence" target="_blank">Fence</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/hooks/pl6031.html" title="Hooks" target="_blank">Hooks</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/mould-design-processing-services/pl6036.html" title="Mould Design &amp; Processing Services" target="_blank">Mould Design &amp; Processing Services</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/other-hardware/pl6041.html" title="Other Hardware" target="_blank">Other Hardware</a></h3>
+                                                                                                                                                                                                                                                                						
+                                                                                    <a href="http://www.Sino-Sources/hardware/c5948.html" class="fb" target="_blank">See all categories</a>					
+                                                    </dd>
+                    </dl>
+                </div>
+            </li>
+             		                             <li>
+                <h2><a href="http://www.Sino-Sources/refractory-materials/pc14171.html" title="Refractory Materials" target="_blank">Refractory Materials</a></h2>
+                <div class="categories_list_nav clearfix" style="display: none;">
+                    <dl class="categories_list_dl">
+                        <dt>Refractory Materials</dt>
+                        <dd>                   
+                                                                                                                            <h3><a href="http://www.Sino-Sources/calcium-silicate-products/pl14174.html" title="Calcium Silicate Products " target="_blank">Calcium Silicate Products </a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/ceramic-fiber-products/pc14178.html" title="Ceramic Fiber Products" target="_blank">Ceramic Fiber Products</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/functional-refractory-materials/pl18386.html" title="Functional Refractory Materials" target="_blank">Functional Refractory Materials</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/high-temperature-textiles/pc14222.html" title="High Temperature Textiles
+" target="_blank">High Temperature Textiles
+</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/monolithic-refractories/pc14242.html" title="Monolithic Refractories
+" target="_blank">Monolithic Refractories
+</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/raw-materials-for-refractory/pl14280.html" title="Raw Materials For Refractory" target="_blank">Raw Materials For Refractory</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/refractory-bricks/pc14282.html" title="Refractory Bricks" target="_blank">Refractory Bricks</a></h3>
+                                                                						
+                                                                                    <a href="http://www.Sino-Sources/refractory-materials/pc14171.html" class="fb" target="_blank">See all categories</a>					
+                                                    </dd>
+                    </dl>
+                </div>
+            </li>
+             		                             <li>
+                <h2><a href="http://www.Sino-Sources/insulation/pc2554.html" title="Insulation" target="_blank">Insulation</a></h2>
+                <div class="categories_list_nav clearfix" style="display: none;">
+                    <dl class="categories_list_dl">
+                        <dt>Insulation</dt>
+                        <dd>                   
+                                                                                                                            <h3><a href="http://www.Sino-Sources/flexible-duct/pl2556.html" title="Flexible Duct" target="_blank">Flexible Duct</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/heat-insulation-board/pc2558.html" title="Heat Insulation Board" target="_blank">Heat Insulation Board</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/heat-insulation-facing/pc2595.html" title="Heat Insulation Facing" target="_blank">Heat Insulation Facing</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/insulation-materials/pc2615.html" title="Insulation Materials" target="_blank">Insulation Materials</a></h3>
+                                                                						
+                                                                                    <a href="http://www.Sino-Sources/insulation/pc2554.html" class="fb" target="_blank">See all categories</a>					
+                                                    </dd>
+                    </dl>
+                </div>
+            </li>
+             		                             <li>
+                <h2><a href="http://www.Sino-Sources/fiberglass-supply/pc13531.html" title="Fiberglass Supply" target="_blank">Fiberglass Supply</a></h2>
+                <div class="categories_list_nav clearfix" style="display: none;">
+                    <dl class="categories_list_dl">
+                        <dt>Fiberglass Supply</dt>
+                        <dd>                   
+                                                                                                                            <h3><a href="http://www.Sino-Sources/composite-pipes/pl13532.html" title="Composite Pipes" target="_blank">Composite Pipes</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/composite-tank/pl13538.html" title="Composite Tank" target="_blank">Composite Tank</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/corner-products/pl13547.html" title="Corner Products" target="_blank">Corner Products</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/frp-lighting-pole/pl13629.html" title="FRP Lighting Pole" target="_blank">FRP Lighting Pole</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/frp-pultrusion-profiles/pl13631.html" title="FRP Pultrusion Profiles" target="_blank">FRP Pultrusion Profiles</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/frp-roofing-panel/pl13641.html" title="FRP Roofing Panel" target="_blank">FRP Roofing Panel</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/fiberglass-chopped-strand/pl13551.html" title="Fiberglass Chopped Strand" target="_blank">Fiberglass Chopped Strand</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/fiberglass-fabrics/pl13560.html" title="Fiberglass Fabrics" target="_blank">Fiberglass Fabrics</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/fiberglass-insulation-sleeve/pl13570.html" title="Fiberglass Insulation Sleeve" target="_blank">Fiberglass Insulation Sleeve</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/fiberglass-mat-tissue/pl13571.html" title="Fiberglass Mat Tissue" target="_blank">Fiberglass Mat Tissue</a></h3>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                						
+                                                                                    <a href="http://www.Sino-Sources/fiberglass-supply/pc13531.html" class="fb" target="_blank">See all categories</a>					
+                                                    </dd>
+                    </dl>
+                </div>
+            </li>
+             		                             <li>
+                <h2><a href="http://www.Sino-Sources/ceilings/pc1689.html" title="Ceilings" target="_blank">Ceilings</a></h2>
+                <div class="categories_list_nav clearfix" style="display: none;">
+                    <dl class="categories_list_dl">
+                        <dt>Ceilings</dt>
+                        <dd>                   
+                                                                                                                            <h3><a href="http://www.Sino-Sources/ceiling-grid-components/pc1691.html" title="Ceiling Grid Components" target="_blank">Ceiling Grid Components</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/ceiling-tile/pc1710.html" title="Ceiling Tile" target="_blank">Ceiling Tile</a></h3>
+                                                                						
+                                                                                    <a href="http://www.Sino-Sources/ceilings/pc1689.html" class="fb" target="_blank">See all categories</a>					
+                                                    </dd>
+                    </dl>
+                </div>
+            </li>
+             		                             <li>
+                <h2><a href="http://www.Sino-Sources/hydraulic-pneumatic/c8627.html" title="Hydraulic &amp; Pneumatic" target="_blank">Hydraulic &amp; Pneumatic</a></h2>
+                <div class="categories_list_nav clearfix" style="display: none;">
+                    <dl class="categories_list_dl">
+                        <dt>Hydraulic &amp; Pneumatic</dt>
+                        <dd>                   
+                                                                                                                            <h3><a href="http://www.Sino-Sources/compressor/pl8629.html" title="Compressor" target="_blank">Compressor</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/cylinder/pl8633.html" title="Cylinder" target="_blank">Cylinder</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/pump-vacuum-equipment/pc8635.html" title="Pump &amp; Vacuum Equipment" target="_blank">Pump &amp; Vacuum Equipment</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/valves-parts/pc8663.html" title="Valves &amp; Parts" target="_blank">Valves &amp; Parts</a></h3>
+                                                                						
+                                                                                    <a href="http://www.Sino-Sources/hydraulic-pneumatic/c8627.html" class="fb" target="_blank">See all categories</a>					
+                                                    </dd>
+                    </dl>
+                </div>
+            </li>
+             		                             <li>
+                <h2><a href="http://www.Sino-Sources/rubber-plastics/c14968.html" title="Rubber &amp; Plastics" target="_blank">Rubber &amp; Plastics</a></h2>
+                <div class="categories_list_nav clearfix" style="display: none;">
+                    <dl class="categories_list_dl">
+                        <dt>Rubber &amp; Plastics</dt>
+                        <dd>                   
+                                                                                                                            <h3><a href="http://www.Sino-Sources/plastic-products/pc14975.html" title="Plastic Products" target="_blank">Plastic Products</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/plastic-raw-materials/pl15052.html" title="Plastic Raw Materials" target="_blank">Plastic Raw Materials</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/rubber-products/pc15060.html" title="Rubber Products" target="_blank">Rubber Products</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/rubber-raw-materials/pl15110.html" title="Rubber Raw Materials" target="_blank">Rubber Raw Materials</a></h3>
+                                                                						
+                                                                                    <a href="http://www.Sino-Sources/rubber-plastics/c14968.html" class="fb" target="_blank">See all categories</a>					
+                                                    </dd>
+                    </dl>
+                </div>
+            </li>
+             		                             <li>
+                <h2><a href="http://www.Sino-Sources/chemical/c1057.html" title="Chemical" target="_blank">Chemical</a></h2>
+                <div class="categories_list_nav clearfix" style="display: none;">
+                    <dl class="categories_list_dl">
+                        <dt>Chemical</dt>
+                        <dd>                   
+                                                                                                                            <h3><a href="http://www.Sino-Sources/additives/pl1065.html" title="Additives" target="_blank">Additives</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/adhesives-sealants/pl1072.html" title="Adhesives &amp; Sealants" target="_blank">Adhesives &amp; Sealants</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/agrochemicals/pc1076.html" title="Agrochemicals" target="_blank">Agrochemicals</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/catalysts-chemical-auxiliary-agents/pc1095.html" title="Catalysts &amp; Chemical Auxiliary Agents" target="_blank">Catalysts &amp; Chemical Auxiliary Agents</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/flavours-fragrances/pl1151.html" title="Flavours &amp; Fragrances" target="_blank">Flavours &amp; Fragrances</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/household-chemicals/pl1142.html" title="Household Chemicals" target="_blank">Household Chemicals</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/inorganic-chemicals/pc1154.html" title="Inorganic Chemicals" target="_blank">Inorganic Chemicals</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/organic-chemicals/pc1208.html" title="Organic Chemicals" target="_blank">Organic Chemicals</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/other-chemicals/pc1265.html" title="Other Chemicals" target="_blank">Other Chemicals</a></h3>
+                                                                                                                                <h3><a href="http://www.Sino-Sources/paint-coating/pl1298.html" title="Paint &amp; Coating" target="_blank">Paint &amp; Coating</a></h3>
+                                                                                                                                                                                                                                                                                                                                						
+                                                                                    <a href="http://www.Sino-Sources/chemical/c1057.html" class="fb" target="_blank">See all categories</a>					
+                                                    </dd>
+                    </dl>
+                </div>
+            </li>
+             		      
+            <li class="last"><a href="http://www.Sino-Sources/products.html" class="fb" target="_blank">ALL CATEGORIES</a></li>
+        </ul>
+    </div>
+    <!--END:categories-->
+    
+    <div class="comments_index_picBorder mb10"><a href="http://www.Sino-Sources/special/spot-goods.html" target="_blank" title="Spot Goods"><img src="${pageContext.request.contextPath}/business/bimages/pic_1.png" width="218" height="150" alt="Spot Goods" title="OKorder Spot Goods"></a></div>
+</div>
+<!--END:main_content left-->
+<!--BEGIN:main_content right-->
+<div class="right_index">
+    <div class="clearfix">
+        <!--BEGIN:banner-->
+        <div class="theme-default banner">
+            <div id="slider" class="nivoSlider">
+                                <a href="http://www.Sino-Sources/special/refractory-materials.html" target="_blank" title="Refractory Materials" class="nivo-imageLink" style="display: none;"><img src="${pageContext.request.contextPath}/business/bimages/6f8b14914546ce43336106458d207219.jpg" title="OKorder Refractory Materials" alt="Refractory Materials" style="display: none;"></a>
+                                 <a href="http://www.Sino-Sources/special/wood-products.html" target="_blank" title="Wood Products" class="nivo-imageLink" style="display: block;"><img src="${pageContext.request.contextPath}/business/bimages/1502bef03c82d49ed40d470ba583b189.jpg" title="OKorder Wood Products" alt="Wood Products" style="width: 740px; visibility: hidden; display: inline;"></a>
+                                 <a href="http://www.Sino-Sources/special/quality-prefab-houses.html" target="_blank" title="prefab-house" class="nivo-imageLink" style="display: none;"><img src="${pageContext.request.contextPath}/business/bimages/0c1e5efbc57d7a409ecab2b37c0fbe66.jpg" title="OKorder prefab-house" alt="prefab-house" style="display: none;"></a>
+                                 <a href="http://www.Sino-Sources/special/artificial-grass.html" target="_blank" title="Artificial Grass" class="nivo-imageLink" style="display: none;"><img src="${pageContext.request.contextPath}/business/bimages/df2c613560daf8acb1fe2b7a3e3248f6.jpg" title="OKorder Artificial Grass" alt="Artificial Grass" style="display: none;"></a>
+                                 <a href="http://www.Sino-Sources/special/ceiling-products.html" target="_blank" title="Ceiling &amp; Partition" class="nivo-imageLink" style="display: none;"><img src="${pageContext.request.contextPath}/business/bimages/2bf3d26dbdb985bf47b8711df9a6cef1.jpg" title="OKorder Ceiling &amp; Partition" alt="Ceiling &amp; Partition" style="display: none;"></a>
+                                 <a href="http://www.Sino-Sources/special/xps-tile-backer-board.html" target="_blank" title="xps-tile-backer-board" class="nivo-imageLink" style="display: none;"><img src="${pageContext.request.contextPath}/business/bimages/fe99ececd9f68d88b8da25dea4b1e5f1.jpg" title="OKorder xps-tile-backer-board" alt="xps-tile-backer-board" style="display: none;"></a>
+                              
+            <img class="nivo-main-image" src="${pageContext.request.contextPath}/business/bimages/1502bef03c82d49ed40d470ba583b189.jpg" style="display: inline; height: 255px;"><div class="nivo-caption" style="display: block;">OKorder Wood Products</div><div class="nivo-directionNav"><a class="nivo-prevNav">Prev</a><a class="nivo-nextNav">Next</a></div><div class="nivo-slice" name="0" style="left: 0px; width: 740px; height: 255px; opacity: 1; overflow: hidden;"><img src="${pageContext.request.contextPath}/business/bimages/index1502bef03c82d49ed40d470ba583b189.jpg" style="position:absolute; width:740px; height:auto; display:block !important; top:0; left:-0px;"></div><div class="nivo-slice" name="1" style="left: 49px; width: 49px; height: 255px; opacity: 0; overflow: hidden;"><img src="./index_files/1502bef03c82d49ed40d470ba583b189.jpg" style="position:absolute; width:740px; height:auto; display:block !important; top:0; left:-49px;"></div><div class="nivo-slice" name="2" style="left: 98px; width: 49px; height: 255px; opacity: 0; overflow: hidden;"><img src="./index_files/1502bef03c82d49ed40d470ba583b189.jpg" style="position:absolute; width:740px; height:auto; display:block !important; top:0; left:-98px;"></div><div class="nivo-slice" name="3" style="left: 147px; width: 49px; height: 255px; opacity: 0; overflow: hidden;"><img src="./index_files/1502bef03c82d49ed40d470ba583b189.jpg" style="position:absolute; width:740px; height:auto; display:block !important; top:0; left:-147px;"></div><div class="nivo-slice" name="4" style="left: 196px; width: 49px; height: 255px; opacity: 0; overflow: hidden;"><img src="./index_files/1502bef03c82d49ed40d470ba583b189.jpg" style="position:absolute; width:740px; height:auto; display:block !important; top:0; left:-196px;"></div><div class="nivo-slice" name="5" style="left: 245px; width: 49px; height: 255px; opacity: 0; overflow: hidden;"><img src="./index_files/1502bef03c82d49ed40d470ba583b189.jpg" style="position:absolute; width:740px; height:auto; display:block !important; top:0; left:-245px;"></div><div class="nivo-slice" name="6" style="left: 294px; width: 49px; height: 255px; opacity: 0; overflow: hidden;"><img src="./index_files/1502bef03c82d49ed40d470ba583b189.jpg" style="position:absolute; width:740px; height:auto; display:block !important; top:0; left:-294px;"></div><div class="nivo-slice" name="7" style="left: 343px; width: 49px; height: 255px; opacity: 0; overflow: hidden;"><img src="./index_files/1502bef03c82d49ed40d470ba583b189.jpg" style="position:absolute; width:740px; height:auto; display:block !important; top:0; left:-343px;"></div><div class="nivo-slice" name="8" style="left: 392px; width: 49px; height: 255px; opacity: 0; overflow: hidden;"><img src="./index_files/1502bef03c82d49ed40d470ba583b189.jpg" style="position:absolute; width:740px; height:auto; display:block !important; top:0; left:-392px;"></div><div class="nivo-slice" name="9" style="left: 441px; width: 49px; height: 255px; opacity: 0; overflow: hidden;"><img src="./index_files/1502bef03c82d49ed40d470ba583b189.jpg" style="position:absolute; width:740px; height:auto; display:block !important; top:0; left:-441px;"></div><div class="nivo-slice" name="10" style="left: 490px; width: 49px; height: 255px; opacity: 0; overflow: hidden;"><img src="./index_files/1502bef03c82d49ed40d470ba583b189.jpg" style="position:absolute; width:740px; height:auto; display:block !important; top:0; left:-490px;"></div><div class="nivo-slice" name="11" style="left: 539px; width: 49px; height: 255px; opacity: 0; overflow: hidden;"><img src="./index_files/1502bef03c82d49ed40d470ba583b189.jpg" style="position:absolute; width:740px; height:auto; display:block !important; top:0; left:-539px;"></div><div class="nivo-slice" name="12" style="left: 588px; width: 49px; height: 255px; opacity: 0; overflow: hidden;"><img src="./index_files/1502bef03c82d49ed40d470ba583b189.jpg" style="position:absolute; width:740px; height:auto; display:block !important; top:0; left:-588px;"></div><div class="nivo-slice" name="13" style="left: 637px; width: 49px; height: 255px; opacity: 0; overflow: hidden;"><img src="${pageContext.request.contextPath}/business/bimages/1502bef03c82d49ed40d470ba583b189.jpg" style="position:absolute; width:740px; height:auto; display:block !important; top:0; left:-637px;"></div><div class="nivo-slice" name="14" style="left: 686px; width: 54px; height: 255px; opacity: 0; overflow: hidden;"><img src="${pageContext.request.contextPath}/business/bimages/1502bef03c82d49ed40d470ba583b189.jpg" style="position:absolute; width:740px; height:auto; display:block !important; top:0; left:-686px;"></div></div><div class="nivo-controlNav"><a class="nivo-control" rel="0">1</a><a class="nivo-control active" rel="1">2</a><a class="nivo-control" rel="2">3</a><a class="nivo-control" rel="3">4</a><a class="nivo-control" rel="4">5</a><a class="nivo-control" rel="5">6</a></div>
+        </div>
+        <!--END:banner-->
+        <!--BEGIN:core value-->
+        <div class="index_core_main">
+            <div class="di-Financial-main">
+                <div class="di-Financial-title">Financial Services</div>
+                <div class="di-Financial">
+                    <ul>
+                        <li class="note-1">Credit Rating</li>
+                        <li class="note-2">Credit Services</li>
+                        <li class="note-3">Credit Purchasing</li>
+                    </ul>
+                 </div>
+                 <a href="http://www.Sino-Sources/fina/service.html" class="view-details">View details</a>
+            </div>
+            <div class="index_core_tel"></div>
+                <!--<div class="index_core_tit" style="display:none;">Why Choose OKorder?</div>
+                <ul class="index_core_list" style="display:none;">
+                    <li><em></em><a href="http://www.Sino-Sources/service/CoreValues.html" target="_blank" title="">Materials & Equipment Expert</a></li>
+                    <li><em></em><a href="http://www.Sino-Sources/service/CoreValues.html#30year" target="_blank" title="">30 Years of Export Experience</a></li>
+                    <li><em></em><a href="http://www.Sino-Sources/service/CoreValues.html#OverseasWarehouse" target="_blank" title="">Overseas Warehousing</a></li>
+                     <li><em></em><a href="http://www.Sino-Sources/service/CoreValues.html#Integration" target="_blank" title="">Logistical Integration</a></li>
+                    <li><em></em><a href="http://www.Sino-Sources/service/CoreValues.html#Services" target="_blank" title="">One Stop Service</a></li>
+                    <li><em></em><a href="http://www.Sino-Sources/service/CoreValues.html#TradeTeam" target="_blank" title="">Elite Foreign Trade Team</a></li>
+                    <li><em></em><a href="http://www.Sino-Sources/service/CoreValues.html#500CNBM" target="_blank" title="">Global Fortune 500 Funding</a></li>            
+                </ul>-->
+        </div>
+        <!--END:core value-->
+    </div>
+    <!--BEGIN:hot products-->
+    <div class="index_hotPro clearfix mb10">
+    	<div class="index_hotProLeft fl">
+        	<div class="index_Pro_tit pt25">Materials</div>
+            <ul class="index_hotPro_list clearfix">
+                                <li>
+                    <div class="img_box_155">
+                                                <div>                      
+                            <a href="http://www.Sino-Sources/p/magnesia-chrome-brick-magnesite-chrome-block-high-chrome-bricks-glass-industry_821114.html" target="_blank"><img src="${pageContext.request.contextPath}/business/bimages/3db3154106d2388bfc1c3b15135bb1eb_450.jpg" alt="Magnesia Chrome Brick/ Magnesite Chrome Block/ High Chrome Bricks/Glass Industry" title="OKorder Magnesia Chrome Brick/ Magnesite Chrome Block/ High Chrome Bricks/Glass Industry"></a>
+                        </div>
+                    </div>
+                    <h4 class="index_hotPro_list_tit"><a href="http://www.Sino-Sources/p/magnesia-chrome-brick-magnesite-chrome-block-high-chrome-bricks-glass-industry_821114.html" target="_blank" title="Magnesia Chrome Brick/ Magnesite Chrome Block/ High Chrome Bricks/Glass Industry">Magnesia Chrome Brick/ Magnesite Chrome Block/ High Chrome Bricks/Glass Industry</a></h4>
+                    <p class="index_hotPro_list_price"><em class="index_price_num">US $125.00</em>&nbsp;/&nbsp;kg</p>
+                </li>
+                                <li>
+                    <div class="img_box_155">
+                                                <div>                      
+                            <a href="http://www.Sino-Sources/p/steel-rolled-coil-ss400-a36-q235-q345-q195-hot-rolled-steel-coil_707427.html" target="_blank"><img src="${pageContext.request.contextPath}/business/bimages/34a0f7765b53df51c4709c240b853801_450.jpg" alt="Steel Rolled Coil SS400 A36 Q235 Q345 Q195 Hot Rolled Steel Coil" title="OKorder Steel Rolled Coil SS400 A36 Q235 Q345 Q195 Hot Rolled Steel Coil"></a>
+                        </div>
+                    </div>
+                    <h4 class="index_hotPro_list_tit"><a href="http://www.Sino-Sources/p/steel-rolled-coil-ss400-a36-q235-q345-q195-hot-rolled-steel-coil_707427.html" target="_blank" title="Steel Rolled Coil SS400 A36 Q235 Q345 Q195 Hot Rolled Steel Coil">Steel Rolled Coil SS400 A36 Q235 Q345 Q195 Hot Rolled Steel Coil</a></h4>
+                    <p class="index_hotPro_list_price">negotiable</p>
+                </li>
+                          
+            </ul>
+        </div>
+        <div class="index_hotProRight fr">
+        	<div class="index_Pro_tit pt25">Equipment</div>
+            <ul class="index_hotPro_list clearfix">
+                                <li>
+                    <div class="img_box_155">
+                                                <div>                      
+                            <a href="http://www.Sino-Sources/p/tower-crane-new-vfd-technical-control-for-sale_727465.html" target="_blank"><img src="${pageContext.request.contextPath}/business/bimages/388ba1b76a9e29e40841d30934a51acc_450.jpg" alt="Tower Crane New VFD Technical Control for Sale" title="OKorder Tower Crane New VFD Technical Control for Sale"></a>
+                        </div>
+                    </div>
+                    <h4 class="index_hotPro_list_tit"><a href="http://www.Sino-Sources/p/tower-crane-new-vfd-technical-control-for-sale_727465.html" target="_blank" title="Tower Crane New VFD Technical Control for Sale">Tower Crane New VFD Technical Control for Sale</a></h4>
+                    <p class="index_hotPro_list_price"><em class="index_price_num">US $40000.00</em>&nbsp;/&nbsp;unit</p>
+                </li>
+                                <li>
+                    <div class="img_box_155">
+                                                <div>                      
+                            <a href="http://www.Sino-Sources/p/solar-inverter-pv1800-5kva-off-grid-with-parallel-operation-low-frequency_783461.html" target="_blank"><img src="${pageContext.request.contextPath}/business/bimages/0d702cc556bb584f9be5408240075822_450.jpg" alt="Solar Inverter PV1800 5KVA Off-grid With Parallel Operation Low Frequency" title="OKorder Solar Inverter PV1800 5KVA Off-grid With Parallel Operation Low Frequency"></a>
+                        </div>
+                    </div>
+                    <h4 class="index_hotPro_list_tit"><a href="http://www.Sino-Sources/p/solar-inverter-pv1800-5kva-off-grid-with-parallel-operation-low-frequency_783461.html" target="_blank" title="Solar Inverter PV1800 5KVA Off-grid With Parallel Operation Low Frequency">Solar Inverter PV1800 5KVA Off-grid With Parallel Operation Low Frequency</a></h4>
+                    <p class="index_hotPro_list_price"><em class="index_price_num">US $200.00</em>&nbsp;/&nbsp;unit</p>
+                </li>
+                              
+            </ul>
+        </div>
+    </div>
+    
+    <!--END:new arrivals-->
+    <div class="main_adv970 clearfix">
+        <div class="main_adv738x150 fl"><a href="http://www.Sino-Sources/service/OurAdvantages.html?p=4" target="_blank" title="Logistics Complex Overseas"><img src="${pageContext.request.contextPath}/business/bimages/pic_738x150.png" width="740" height="152" alt="Logistics Complex Overseas" title="OKorder Logistics Complex Overseas"></a></div>
+        <div class="main_adv218x150 fr"><a href="http://www.Sino-Sources/special/all-subjects.html" target="_blank" title="Promotion"><img src="${pageContext.request.contextPath}/business/bimages/pic_218x150.png" width="220" height="152" alt="Promotion" title="OKorder Promotion"></a></div>
+    </div>
+</div>
+<!--END:main_content right-->
+</div>
+<div class="w1200 clearfix">
+    
+    <!--BEGIN:Recommended Products-->
+    <div class="index_proNew clearfix BgFFF fl mb10">
+		<div class="index_title">
+            <h3 class="index_title_h3">Popular Categories</h3>
+            <a href="http://www.Sino-Sources/special_categorys.html" target="_blank" class="index_title_More">View More</a>
+		</div>
+                <div class="index_proNew_list">
+            <div class="index_proNew_title"><a href="http://www.Sino-Sources/category/solar-energy-products_769.html" target="_blank" title="Solar Energy Products" class="index_proNew_dlH3">Solar Energy Products</a></div>
+            <ul>
+                        <li><a href="http://www.Sino-Sources/solar-cells/pl4972.html" target="_blank" title="Solar Cells">Solar Cells</a></li>
+                        <li><a href="http://www.Sino-Sources/solar-panels/pl5012.html" target="_blank" title="Solar Panels">Solar Panels</a></li>
+                        <li><a href="http://www.Sino-Sources/solar-energy-products/pc4967.html" target="_blank" title="Solar Energy Products">Solar Energy Products</a></li>
+              
+            </ul>    
+            <div class="index_proNew_Info">
+            <p class="index_proNew_Plink"><a href="http://www.Sino-Sources/category/solar-energy-products_769.html" target="_blank" title="similar products">Similar Products<span class="ml10 ui_icon white"></span></a></p>
+            <a href="http://www.Sino-Sources/category/solar-energy-products_769.html" target="_blank" class="h60" title="Solar Energy Products"><img src="./index_files/b278b30f88b8cd08e943acec3d188ae9.jpg" alt="Decoration Materials " title="OKorder Decoration Materials "></a>
+            </div>
+        </div>
+               <div class="index_proNew_list">
+            <div class="index_proNew_title"><a href="http://www.Sino-Sources/category/fiberglass-supplies_873.html" target="_blank" title="Fiberglass Supplies" class="index_proNew_dlH3">Fiberglass Supplies</a></div>
+            <ul>
+                        <li><a href="http://www.Sino-Sources/fiberglass-mesh-tape/pl13588.html" target="_blank" title="Fiberglass Mesh tape">Fiberglass Mesh tape</a></li>
+                        <li><a href="http://www.Sino-Sources/abrasives/pl5958.html" target="_blank" title="Abrasives">Abrasives</a></li>
+                        <li><a href="http://www.Sino-Sources/fiberglass-mesh/pl13578.html" target="_blank" title="Fiberglass Mesh">Fiberglass Mesh</a></li>
+              
+            </ul>    
+            <div class="index_proNew_Info">
+            <p class="index_proNew_Plink"><a href="http://www.Sino-Sources/category/fiberglass-supplies_873.html" target="_blank" title="similar products">Similar Products<span class="ml10 ui_icon white"></span></a></p>
+            <a href="http://www.Sino-Sources/category/fiberglass-supplies_873.html" target="_blank" class="h60" title="Fiberglass Supplies"><img src="./index_files/85514401e5f8dcb55a25b369975d34eb.jpg" alt="Decoration Materials " title="OKorder Decoration Materials "></a>
+            </div>
+        </div>
+               <div class="index_proNew_list">
+            <div class="index_proNew_title"><a href="http://www.Sino-Sources/category/cranes_713.html" target="_blank" title="Cranes" class="index_proNew_dlH3">Cranes</a></div>
+            <ul>
+                        <li><a href="http://www.Sino-Sources/tower-cranes/pl10233.html" target="_blank" title="Tower Cranes">Tower Cranes</a></li>
+                        <li><a href="http://www.Sino-Sources/lift-tables/pl11133.html" target="_blank" title="Lift Tables">Lift Tables</a></li>
+                        <li><a href="http://www.Sino-Sources/building-hoist/pl10129.html" target="_blank" title="Building Hoist">Building Hoist</a></li>
+              
+            </ul>    
+            <div class="index_proNew_Info">
+            <p class="index_proNew_Plink"><a href="http://www.Sino-Sources/category/cranes_713.html" target="_blank" title="similar products">Similar Products<span class="ml10 ui_icon white"></span></a></p>
+            <a href="http://www.Sino-Sources/category/cranes_713.html" target="_blank" class="h60" title="Cranes"><img src="${pageContext.request.contextPath}/business/bimages/5a4bea726a252321c45b63ecc388870f.jpg" alt="Decoration Materials " title="OKorder Decoration Materials "></a>
+            </div>
+        </div>
+               <div class="index_proNew_list">
+            <div class="index_proNew_title"><a href="http://www.Sino-Sources/category/steel-pipes_668.html" target="_blank" title="Steel Pipes" class="index_proNew_dlH3">Steel Pipes</a></div>
+            <ul>
+                        <li><a href="http://www.Sino-Sources/steel-pipes/pl14457.html" target="_blank" title="Steel Pipes">Steel Pipes</a></li>
+              
+            </ul>    
+            <div class="index_proNew_Info">
+            <p class="index_proNew_Plink"><a href="http://www.Sino-Sources/category/steel-pipes_668.html" target="_blank" title="similar products">Similar Products<span class="ml10 ui_icon white"></span></a></p>
+            <a href="http://www.Sino-Sources/category/steel-pipes_668.html" target="_blank" class="h60" title="Steel Pipes"><img src="${pageContext.request.contextPath}/business/bimages/be96d4d30e883adf270519d31ca3e721.jpg" alt="Decoration Materials " title="OKorder Decoration Materials "></a>
+            </div>
+        </div>
+                                      
+        </div>
+    <!--END:Recommended Products-->
+    <div class="main_adv218x332 fr mb10"><a href="http://www.Sino-Sources/special/quality-hardware.html" target="_blank" title="hardware"><img src="${pageContext.request.contextPath}/business/bimages/f029a6d2f4bf3ce3c39f94843f336f44.jpg" width="220" height="334" alt="hardware" title="OKorder hardware"></a></div>
+    <div class="clr"></div>
+    <div class="clearfix">
+    	<div class="left_index">
+        <!--BEGIN:Buyer Comments-->
+    <div class="comments_index mb10">
+    	<div class="comments_index_titNew" style="font-size:16px; margin-bottom:2px;">Check the Buyer's Guide!</div>
+        <div class="comments_index_ColumnLeft">
+       	  <ul>
+            	<li><i class="comments_index_LeftIcon_1"></i><a href="http://www.Sino-Sources/service/findProducts.html" target="_blank" title="Find products">Find products</a></li>
+                <li><i class="comments_index_LeftIcon_2"></i><a href="http://www.Sino-Sources/service/GetLatestQuotation.html" target="_blank" title="Get the Latest Quatations">Get the Latest Quotations</a></li>
+                <li><i class="comments_index_LeftIcon_3"></i><a href="http://www.Sino-Sources/service/RealTimeQuote.html" target="_blank" title="Receive Real Time Quotes">Receive Real Time Quotes</a></li>
+                <li><i class="comments_index_LeftIcon_4"></i><a href="http://www.Sino-Sources/service/SecuredTradingServices.html" target="_blank" title="Utilize Secured Trading Services">Enjoy Secure Trading</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--END:Buyer Comments-->
+        </div>
+        <div class="right_index">
+        	<div class="Rec_ProductsBox mb10">
+            	<div class="index_New_mainListTitle">Recommend Products</div>
+                    <div class="picbox">
+                        <ul class="piclist mainlist" style="width: 2400px;">
+                            							<li>
+							<a href="http://www.Sino-Sources/p/football-and-baseball-grass-with-pe-monofilament-yarn_1007574.html" target="_blank"><img src="${pageContext.request.contextPath}/business/bimages/92b9727ebaf13403f666175cb1a156aa_161.jpg" alt="Football and baseball Grass with PE Monofilament yarn" title="OKorder  Football and baseball Grass with PE Monofilament yarn"><span>Football and baseball Grass with PE Monofilament yarn</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/pe-straight-yarn-pp-curly-monofilament-yarn-landscaping-grass_1006272.html" target="_blank"><img src="${pageContext.request.contextPath}/business/bimages/9890bd67068084e1725eb857f9ce53e3_161.jpg" alt="PE Straight Yarn/PP Curly Monofilament Yarn Landscaping Grass" title="OKorder  PE Straight Yarn/PP Curly Monofilament Yarn Landscaping Grass"><span>PE Straight Yarn/PP Curly Monofilament Yarn Landscaping Grass</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/colorful-artificial-turf-for-kids-of-high-quality-body-friendly_1007349.html" target="_blank"><img src="${pageContext.request.contextPath}/business/bimages/7fad0b93a341e1e699e707743b44dd10_161.jpg" alt="Colorful Artificial Turf for Kids of High Quality Body Friendly" title="OKorder  Colorful Artificial Turf for Kids of High Quality Body Friendly"><span>Colorful Artificial Turf for Kids of High Quality Body Friendly</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/11-6-inch-intel-tablet-pc-z3735f-quad-core-ips-screen_737940.html" target="_blank"><img src="${pageContext.request.contextPath}/business/bimages/ff51d95d2eea7b2978617b09904022b5_161.jpg" alt="11.6 inch Intel Tablet PC Z3735F Quad Core IPS Screen" title="OKorder  11.6 inch Intel Tablet PC Z3735F Quad Core IPS Screen"><span>11.6 inch Intel Tablet PC Z3735F Quad Core IPS Screen</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/intel-mini-pc-stick-quad-core-2015-brand-new-product_738327.html" target="_blank"><img src="${pageContext.request.contextPath}/business/bimages/4310c9343220290408a99ec1f2428159_161.jpg" alt="intel Mini PC-Stick Quad Core 2015 Brand New Product" title="OKorder  intel Mini PC-Stick Quad Core 2015 Brand New Product"><span>intel Mini PC-Stick Quad Core 2015 Brand New Product</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/fifa-2-star-professional-50-60mm-soccer-artificial-grass_914416.html" target="_blank"><img src="${pageContext.request.contextPath}/business/bimages/e4c9e9bf9c59104a3915dad168680cd7_161.jpg" alt="FIFA 2 Star Professional 50-60mm Soccer Artificial Grass" title="OKorder  FIFA 2 Star Professional 50-60mm Soccer Artificial Grass"><span>FIFA 2 Star Professional 50-60mm Soccer Artificial Grass</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/windows-system-intel-tablet-pc-10-1-inch-with-standard-keypad_734785.html" target="_blank"><img src="${pageContext.request.contextPath}/business/bimages/2713fdafac22657d57a5c77d968b4ed1_161.jpg" alt="Windows System intel Tablet PC 10.1 inch with Standard Keypad" title="OKorder  Windows System intel Tablet PC 10.1 inch with Standard Keypad"><span>Windows System intel Tablet PC 10.1 inch with Standard Keypad</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/artificial-grass-synthetic-lawn-outdoor-flooring-carpet-landscaping-grass_1010171.html" target="_blank"><img src="${pageContext.request.contextPath}/business/bimages/85d5acfacd63f4b8caa47ae610f9d67a_161.jpg" alt="Artificial Grass Synthetic Lawn Outdoor Flooring Carpet landscaping Grass" title="OKorder  Artificial Grass Synthetic Lawn Outdoor Flooring Carpet landscaping Grass"><span>Artificial Grass Synthetic Lawn Outdoor Flooring Carpet landscaping Grass</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/intel-tablet-pc-z3735f-8-inch-quad-core-ips-screen_732904.html" target="_blank"><img src="${pageContext.request.contextPath}/business/bimages/0c41e10225cd87f1f23a8fee36242bd7_161.jpg" alt="Intel Tablet PC Z3735F 8 Inch Quad Core IPS Screen" title="OKorder  Intel Tablet PC Z3735F 8 Inch Quad Core IPS Screen"><span>Intel Tablet PC Z3735F 8 Inch Quad Core IPS Screen</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/leisure-artificial-grass-for-garden-sgs-approved-cheap_1006614.html" target="_blank"><img src="${pageContext.request.contextPath}/business/bimages/705b9706723d043968cca0486f17792c_161.jpg" alt="Leisure Artificial Grass for Garden SGS Approved Cheap" title="OKorder  Leisure Artificial Grass for Garden SGS Approved Cheap"><span>Leisure Artificial Grass for Garden SGS Approved Cheap</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/artificial-grass-lawn-for-playground-durable-and-professional_1006304.html" target="_blank"><img src="${pageContext.request.contextPath}/business/bimages/661600992c64d6a889c37406a1d12021_161.jpg" alt="Artificial Grass Lawn for Playground Durable and Professional" title="OKorder  Artificial Grass Lawn for Playground Durable and Professional"><span>Artificial Grass Lawn for Playground Durable and Professional</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/newest-design-multifunction-robot-vacuum-cleaner_638803.html" target="_blank"><img src="./index_files/e4365ed44c7c5037ccf9b03e573b740e_161.jpg" alt="Newest Design Multifunction Robot Vacuum Cleaner" title="OKorder  Newest Design Multifunction Robot Vacuum Cleaner"><span>Newest Design Multifunction Robot Vacuum Cleaner</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/intel-tablet-pc-with-standard-keypad-quad-core-ips-screen-2015-brand-new_738087.html" target="_blank"><img src="./index_files/da0d84bc4ba37dbfd10ca6d0ef206efe_161.jpg" alt="intel Tablet PC with Standard Keypad Quad Core IPS Screen 2015 Brand New" title="OKorder  intel Tablet PC with Standard Keypad Quad Core IPS Screen 2015 Brand New"><span>intel Tablet PC with Standard Keypad Quad Core IPS Screen 2015 Brand New</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/intel-tablet-pc-quad-core-1gb-16gb-10-1-inch_733153.html" target="_blank"><img src="./index_files/b1f37bb6a7fb6c45ff9fc9d60a6d55d0_161.jpg" alt="intel Tablet PC Quad Core 1GB 16GB 10.1 inch" title="OKorder  intel Tablet PC Quad Core 1GB 16GB 10.1 inch"><span>intel Tablet PC Quad Core 1GB 16GB 10.1 inch</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/windows-tablet-pc-8-inch-z3735g-with-1gb-ddr-16gb-rom_733546.html" target="_blank"><img src="./index_files/e783a75fe1471cd4b196fb653217bb4d_161.jpg" alt="Windows Tablet PC 8 inch Z3735G with 1GB DDR 16GB ROM" title="OKorder  Windows Tablet PC 8 inch Z3735G with 1GB DDR 16GB ROM"><span>Windows Tablet PC 8 inch Z3735G with 1GB DDR 16GB ROM</span></a></li>
+							                           
+                        </ul>
+                        <ul class="piclist swaplist" style="width: 2400px;">
+                            							<li>
+							<a href="http://www.Sino-Sources/p/football-and-baseball-grass-with-pe-monofilament-yarn_1007574.html" target="_blank"><img src="./index_files/92b9727ebaf13403f666175cb1a156aa_161.jpg" alt="Football and baseball Grass with PE Monofilament yarn" title="OKorder  Football and baseball Grass with PE Monofilament yarn"><span>Football and baseball Grass with PE Monofilament yarn</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/pe-straight-yarn-pp-curly-monofilament-yarn-landscaping-grass_1006272.html" target="_blank"><img src="./index_files/9890bd67068084e1725eb857f9ce53e3_161.jpg" alt="PE Straight Yarn/PP Curly Monofilament Yarn Landscaping Grass" title="OKorder  PE Straight Yarn/PP Curly Monofilament Yarn Landscaping Grass"><span>PE Straight Yarn/PP Curly Monofilament Yarn Landscaping Grass</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/colorful-artificial-turf-for-kids-of-high-quality-body-friendly_1007349.html" target="_blank"><img src="./index_files/7fad0b93a341e1e699e707743b44dd10_161.jpg" alt="Colorful Artificial Turf for Kids of High Quality Body Friendly" title="OKorder  Colorful Artificial Turf for Kids of High Quality Body Friendly"><span>Colorful Artificial Turf for Kids of High Quality Body Friendly</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/11-6-inch-intel-tablet-pc-z3735f-quad-core-ips-screen_737940.html" target="_blank"><img src="./index_files/ff51d95d2eea7b2978617b09904022b5_161.jpg" alt="11.6 inch Intel Tablet PC Z3735F Quad Core IPS Screen" title="OKorder  11.6 inch Intel Tablet PC Z3735F Quad Core IPS Screen"><span>11.6 inch Intel Tablet PC Z3735F Quad Core IPS Screen</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/intel-mini-pc-stick-quad-core-2015-brand-new-product_738327.html" target="_blank"><img src="./index_files/4310c9343220290408a99ec1f2428159_161.jpg" alt="intel Mini PC-Stick Quad Core 2015 Brand New Product" title="OKorder  intel Mini PC-Stick Quad Core 2015 Brand New Product"><span>intel Mini PC-Stick Quad Core 2015 Brand New Product</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/fifa-2-star-professional-50-60mm-soccer-artificial-grass_914416.html" target="_blank"><img src="./index_files/e4c9e9bf9c59104a3915dad168680cd7_161.jpg" alt="FIFA 2 Star Professional 50-60mm Soccer Artificial Grass" title="OKorder  FIFA 2 Star Professional 50-60mm Soccer Artificial Grass"><span>FIFA 2 Star Professional 50-60mm Soccer Artificial Grass</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/windows-system-intel-tablet-pc-10-1-inch-with-standard-keypad_734785.html" target="_blank"><img src="./index_files/2713fdafac22657d57a5c77d968b4ed1_161.jpg" alt="Windows System intel Tablet PC 10.1 inch with Standard Keypad" title="OKorder  Windows System intel Tablet PC 10.1 inch with Standard Keypad"><span>Windows System intel Tablet PC 10.1 inch with Standard Keypad</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/artificial-grass-synthetic-lawn-outdoor-flooring-carpet-landscaping-grass_1010171.html" target="_blank"><img src="./index_files/85d5acfacd63f4b8caa47ae610f9d67a_161.jpg" alt="Artificial Grass Synthetic Lawn Outdoor Flooring Carpet landscaping Grass" title="OKorder  Artificial Grass Synthetic Lawn Outdoor Flooring Carpet landscaping Grass"><span>Artificial Grass Synthetic Lawn Outdoor Flooring Carpet landscaping Grass</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/intel-tablet-pc-z3735f-8-inch-quad-core-ips-screen_732904.html" target="_blank"><img src="./index_files/0c41e10225cd87f1f23a8fee36242bd7_161.jpg" alt="Intel Tablet PC Z3735F 8 Inch Quad Core IPS Screen" title="OKorder  Intel Tablet PC Z3735F 8 Inch Quad Core IPS Screen"><span>Intel Tablet PC Z3735F 8 Inch Quad Core IPS Screen</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/leisure-artificial-grass-for-garden-sgs-approved-cheap_1006614.html" target="_blank"><img src="./index_files/705b9706723d043968cca0486f17792c_161.jpg" alt="Leisure Artificial Grass for Garden SGS Approved Cheap" title="OKorder  Leisure Artificial Grass for Garden SGS Approved Cheap"><span>Leisure Artificial Grass for Garden SGS Approved Cheap</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/artificial-grass-lawn-for-playground-durable-and-professional_1006304.html" target="_blank"><img src="./index_files/661600992c64d6a889c37406a1d12021_161.jpg" alt="Artificial Grass Lawn for Playground Durable and Professional" title="OKorder  Artificial Grass Lawn for Playground Durable and Professional"><span>Artificial Grass Lawn for Playground Durable and Professional</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/newest-design-multifunction-robot-vacuum-cleaner_638803.html" target="_blank"><img src="./index_files/e4365ed44c7c5037ccf9b03e573b740e_161.jpg" alt="Newest Design Multifunction Robot Vacuum Cleaner" title="OKorder  Newest Design Multifunction Robot Vacuum Cleaner"><span>Newest Design Multifunction Robot Vacuum Cleaner</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/intel-tablet-pc-with-standard-keypad-quad-core-ips-screen-2015-brand-new_738087.html" target="_blank"><img src="./index_files/da0d84bc4ba37dbfd10ca6d0ef206efe_161.jpg" alt="intel Tablet PC with Standard Keypad Quad Core IPS Screen 2015 Brand New" title="OKorder  intel Tablet PC with Standard Keypad Quad Core IPS Screen 2015 Brand New"><span>intel Tablet PC with Standard Keypad Quad Core IPS Screen 2015 Brand New</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/intel-tablet-pc-quad-core-1gb-16gb-10-1-inch_733153.html" target="_blank"><img src="./index_files/b1f37bb6a7fb6c45ff9fc9d60a6d55d0_161.jpg" alt="intel Tablet PC Quad Core 1GB 16GB 10.1 inch" title="OKorder  intel Tablet PC Quad Core 1GB 16GB 10.1 inch"><span>intel Tablet PC Quad Core 1GB 16GB 10.1 inch</span></a></li>
+														<li>
+							<a href="http://www.Sino-Sources/p/windows-tablet-pc-8-inch-z3735g-with-1gb-ddr-16gb-rom_733546.html" target="_blank"><img src="./index_files/e783a75fe1471cd4b196fb653217bb4d_161.jpg" alt="Windows Tablet PC 8 inch Z3735G with 1GB DDR 16GB ROM" title="OKorder  Windows Tablet PC 8 inch Z3735G with 1GB DDR 16GB ROM"><span>Windows Tablet PC 8 inch Z3735G with 1GB DDR 16GB ROM</span></a></li>
+							                           
+                        </ul>
+                    </div>
+                    <div class="og_prev"></div>
+                    <div class="og_next"></div>
+            </div>
+        </div>
+    </div>
+    <!--BEGIN:4 advantages-->
+    <ul class="index_advantages fl clearfix BgFFF">
+        <li><em class="index_advantages_dot01"><a href="http://www.Sino-Sources/service/OurAdvantages.html" target="_blank" title="Extensive Buyer Support"></a></em><a href="http://www.Sino-Sources/service/OurAdvantages.html" target="_blank" title="">Extensive Buyer Support</a> </li>
+        <li><em class="index_advantages_dot02"><a href="http://www.Sino-Sources/service/OurAdvantages.html?p=2" target="_blank" title="Global Fortune 500 Funding"></a></em><a href="http://www.Sino-Sources/service/OurAdvantages.html?p=2" target="_blank" title="">Global Fortune 500 Funding</a></li>
+        <li><em class="index_advantages_dot03"><a href="http://www.Sino-Sources/service/OurAdvantages.html?p=3" target="_blank" title="One Stop Sourcing"></a></em><a href="http://www.Sino-Sources/service/OurAdvantages.html?p=3" target="_blank" title="">One Stop Sourcing</a></li>
+        <li><em class="index_advantages_dot04"><a href="http://www.Sino-Sources/service/OurAdvantages.html?p=4" target="_blank" title="Dubai Logistics Center"></a></em><a href="http://www.Sino-Sources/service/OurAdvantages.html?p=4" target="_blank" title="">Dubai Logistics Center</a></li>
+    </ul>
+    <!--END:4 advantages-->
+    <!--BEGIN:company_introduction-->
+    <div class="company_intro fl BgFFF">
+    <h1>Sino-Sources:&nbsp;YOUR Materials &amp; Equipment Suppler &amp; Manufacturer in China</h1>
+    <p>Sino-Sources is a professional materials &amp; equipment supplier &amp; manufacturer. We are always in your corner with integrated one stop services, including real-time price quotes and online cargo tracking. Backed by Fortune 500 member and the largest materials &amp; equipment firm in China, the CNBM Group, we have the resources and expertise to help you succeed.</p></div>
+    <!--END:company_introduction-->
+    <div class="clr"></div>
+<a id="feedback" href="http://www.Sino-Sources/suggest.html" target="_blank"></a>
+<div id="sign_hidden" class="sign_hidden">
+<div name="sign_dialog" class="sign_dialog">	
+	<input type="hidden" name="remember_user_login_name" value="">
+	<ul class="pro_join_tit" id="pro_join_tit">
+    	<li class="tit_check" onclick="javascript:SignDialog.switchTab(&#39;login&#39;);"><a href="javascript:void(0);"><h2>Sign in to Sino-Sources</h2></a></li>
+        <li onclick="javascript:SignDialog.switchTab(&#39;reg&#39;);"><a href="javascript:void(0);"><h2>Join Sino-Sources</h2></a></li>
+    </ul>
+    <div class="pro_join_cont" name="sign_tab">
+    	<div name="sign_login_cont">			
+            <table width="100%" cellspacing="0" cellpadding="0" border="0" class="inquiry_tabA mt30">
+              <tbody><tr>
+                <th width="150" valign="top" class="vmid">Email:</th>
+                <td class="ptb10">
+					<input type="text" value="" name="user_login_name" size="30" class="inquiry_tabA_text">
+					<span class="tip"></span>
+				</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <th valign="top" class="vmid">Password:</th>
+                <td width="190" class="ptb10">
+				<input type="password" value="" name="password" size="30" class="inquiry_tabA_text">
+				<span class="tip"></span>
+				</td>
+                <td><a href="http://usercenter.Sino-Sources/login/findpassword.php" target="_blank">Forget your password?</a></td>
+              </tr>
+              <tr>
+                <th></th>
+                <td><input id="memberid" type="checkbox" checked="checked" value="1" name="is_rember_login_name"> <label class="pl5" for="memberid">Remember My Email</label></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>				
+				<a name="loginSubmitBtn" href="javascript:void(0);" class="btn_inquiry btn_send" title="" onclick="javascript:SignDialog.submit(&#39;login&#39;)">Sign In</a>
+				<img name="loadingImg" src="${pageContext.request.contextPath}/business/bimages/loading.gif" style="display:none">
+				<span class="tip" name="SubmitErrorInfo"></span>
+				</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>Not a Member? <a href="http://usercenter.Sino-Sources/cust/reg.php" class="under" title="" target="_blank">Join OKorder Now</a></td>
+                <td>&nbsp;</td>
+              </tr>
+            </tbody></table>
+        </div>
+        <div name="sign_reg_cont" class="none">
+            <table width="550" cellspacing="0" cellpadding="0" border="0" class="inquiry_tabA mt10">
+                <tbody>
+                    <tr>
+                        <th width="150" valign="top" class="vmid">
+                            <span class="red">*</span> Email:
+                        </th>
+                        <td colspan="2">
+                            <input type="text" name="user_login_name" size="30" class="inquiry_tabA_text">
+                            <span class="tip"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th valign="top" class="vmid"><span class="red">*</span> Set Password:</th>
+                        <td colspan="2">
+                            <input type="password" name="passwd" size="30" class="inquiry_tabA_text">
+                            <span class="tip"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th valign="top" class="vmid"><span class="red">*</span> Repeat Password:</th>
+                        <td colspan="2">
+                            <input type="password" name="passwd2" size="30" class="inquiry_tabA_text">
+                            <span class="tip"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th valign="top" class="vmid"><span class="red">*</span>  Check Code:</th>
+                        <td>
+                            <input type="text" name="checkcode" value="" maxlength="4" size="6" class="inquiry_tabA_text signin_text">
+                            <img name="imgCheckCode" width="0" height="0">
+                            <img src="${pageContext.request.contextPath}/business/bimages/refresh.gif" class="pl5" style="cursor:pointer" onclick="javascript:SignDialog.refreshCheckCode();" title="Click to load a new image">
+							<span class="tip"></span>
+                        </td>
+                    </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="2">
+                        <input type="checkbox" checked="checked" value="1" id="isaccept" name="isaccept" class="vcheckbox"> 
+                        <label for="isaccept">I accept the </label><a target="_blank" href="http://www.Sino-Sources/term/membership-agreement.html">OKorder Membership Agreement</a>
+						<span class="tip"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="2">					
+					<a name="regSubmitBtn" href="javascript:void(0);" class="btn_inquiry btn_send" title="" onclick="javascript:SignDialog.submit(&#39;reg&#39;)">Join Free</a>
+					<img name="loadingImg" src="${pageContext.request.contextPath}/business/bimages/loading.gif" style="display:none">
+					<span class="tip" name="SubmitErrorInfo"></span>
+					</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+</div>
+<!--END:main_content-->
+
+<!--BEGIN:footer_search-->
+<div class="clr">&nbsp;</div>
+<div class="footer_search">
+	<div class="footer_search_main">
+		<form name="footerSearchForm" id="footerSearchForm" method="GET" action="http://www.Sino-Sources/products/searchresult.html">
+        <div class="footer_search_select_main fl">
+        <select name="prod_class_id">
+            <option value="0">All Categories</option>
+			            <option value="3">Automotive &amp; Motorcycle</option>
+			            <option value="1057">Chemical</option>
+			            <option value="1378">Construction &amp; Real Estate</option>
+			            <option value="3268">Consumer Electronics</option>
+			            <option value="4180">Electrical Equipment &amp; Supplies</option>
+			            <option value="4630">Electronic Components &amp; Supplies</option>
+			            <option value="4866">Energy Products</option>
+			            <option value="18400">Furniture &amp; Décor</option>
+			            <option value="5948">Hardware</option>
+			            <option value="6079">Healthcare</option>
+			            <option value="6339">Home &amp; Garden</option>
+			            <option value="7719">Home Appliances</option>
+			            <option value="8627">Hydraulic &amp; Pneumatic</option>
+			            <option value="8752">Lights &amp; Lighting</option>
+			            <option value="9656">Machinery &amp; Equipment</option>
+			            <option value="12128">Measurement &amp; Analysis Instruments</option>
+			            <option value="12570">Mechanical Parts &amp; Fabrication Services</option>
+			            <option value="13385">Minerals &amp; Metallurgy</option>
+			            <option value="14676">Packaging &amp; Printing</option>
+			            <option value="14968">Rubber &amp; Plastics</option>
+			            <option value="15120">Security &amp; Protection</option>
+			            <option value="15589">Service Equipment</option>
+			            <option value="15791">Sports &amp; Entertainment</option>
+			            <option value="16763">Telecommunications</option>
+			            <option value="16896">Textiles &amp; Leather Products</option>
+			            <option value="17178">Tools &amp; Accessories</option>
+			            <option value="17711">Transportation</option>
+			        </select>
+        </div>		
+        <input type="text" value="pvc window and door" onblur="if(this.value==&#39;&#39;){this.value=&#39;pvc window and door&#39;}" onfocus="if(this.value==&#39;pvc window and door&#39;){this.value=&#39;&#39;}" class="footer_search_text fl" name="keyword" id="footerSearchInput">
+        <input type="button" value="Search" class="footer_search_btn fl" onclick="javascript:submitFooterSearch();">
+        </form>
+    </div>
+</div>
+<!--END:footer_search-->
+</div>
+
+	<%@ include file="footer.jsp"%>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42214798-1', 'Sino-Sources');
+  ga('send', 'pageview');
+</script>
+
+<!-- Start of SkyGlue Code -->
+<script type="text/javascript">
+	var _sgq = _sgq || [];
+	_sgq.push(['setSgAccount', 'ekrhsbwe']);
+
+	setTimeout(function() {
+	var sg = document.createElement('script'); sg.type = 'text/javascript'; sg.async = true;
+	sg.src = ("https:" == document.location.protocol ? "https://dc" : "http://cdn0") + ".skyglue.com/sgtracker.js";
+	var s = document.getElementsByTagName('script')[0]; 
+	s.parentNode.insertBefore(sg, s);
+	}, 1);
+</script>
+<!-- End of SkyGlue Code -->
+</div></body></html>

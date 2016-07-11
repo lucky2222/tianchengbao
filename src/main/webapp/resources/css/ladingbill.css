@@ -1,0 +1,99 @@
+@CHARSET "UTF-8";
+
+.billconfirmation {
+	margin:0.5em auto;
+	clear: both;
+}
+
+.billconfirmation>div {
+	background: #ccc;
+	width: 100%;
+	margin: 0 auto;
+	border-radius: 0.8em;
+	-webkit-border-radius: 0.8em;
+	-moz-border-radius: 0.8em;
+	background: #fff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff),
+		to(#f6f6f6));
+	background: -moz-linear-gradient(top, #fff, #f6f6f6);
+}
+
+.billconfirmation h2 {
+	width: 98%;
+	font-weight: bold;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 24px;
+	color: #C00;
+	text-shadow: 0 .1em .1em rgba(0, 0, 0, 0.3);
+	padding-bottom: .25em;
+}
+
+.billconfirmation h3 {
+	margin: .5em auto .25em;
+}
+
+.billconfirmation h3 input {
+	padding: .15em 0 .15em 0;
+	color: #aaa;
+	-webkit-border-radius: .2em;
+	-moz-border-radius: .3em;
+	border-radius: .3em;
+	border: 1px solid #ccc;
+	vertical-align: middle;
+}
+
+.billconfirmation h3 button {
+	padding: .25em 1.5em .25em 1.5em;
+}
+
+.billconfirmation table {
+	margin: 0 auto;
+	width: 98%;
+	border-collapse: collapse;margin-bottom:10px;
+}
+
+.billconfirmation table td {
+	border-collapse: collapse;
+	border: 1px solid #ccc;
+}
+
+.billconfirmation table caption {
+	text-align: left;
+	margin: 1em 0 1em 0;
+}
+
+.billconfirmation table td {
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+}
+.billconfirmation table td p {line-height: 1.5em;padding: .25em .5em 0 .5em;color: #666;font-family: Arial, Helvetica, sans-serif;
+font-size:0.8em;}
+.billconfirmation table td p span{ font-size:14px; padding-right:15px; color:#337ab7;}
+.billconfirmation table td em {display: block;text-transform: capitalize;color: #444;font-weight: normal;margin: 0;padding: .25em .5em .5em .5em; font-style:normal; font-size:14px;}
+.billconfirmation table td em span {color: #F30;font-style: normal; font-size:12px;}
+.cgstitle{ margin-left:1em;}
+.cgstitle p{ display:inline-block; margin-right:15px;}
+.cgstitle p label{ color:#337ab7; font-weight:normal;}
+.cgstitle p em{ font-style:normal;}
+.billconfirmation>div>p:last-of-type {width:100%;margin:0 0 0 1em;}
+.billconfirmation>div>p:last-of-type button, .billconfirmation table td p button{padding: .25em 1.5em .25em 1.5em;}
+.billconfirmation>div>table .xiangfenghaobill {border: none;width: 80%;margin: 2em auto 2em;margin-top: 0;}
+.billconfirmation>div>table .xiangfenghaobill td {border: none;padding: .05em;}
+#bordernone td {border: none;}
+.billconfirmation>div>div {margin:0 auto;width: 96%;}
+.billconfirmation>div>div>h3 {font-weight:700;margin: .25em 0 .5em 0;}
+.billconfirmation>div>div>textarea {width:50%;margin: .5em auto;min-height:5em; font-size:1em;}
+.billconfirmation div .billsample div textarea {line-height:1.3em !important; font-size:14px; padding:5px; margin-left:0.5em; border-radius:.5em;border:1px solid #ccc;}
+.billcontent {margin:0 0 0.5em 0.5em;font-size:14px;line-height:20px;width: 95%;font-family: Arial, Helvetica, sans-serif;text-transform: uppercase;border: 1px solid #ccc;-webkit-border-radius: .5em;-moz-border-radius: .5em;border-radius: .5em;padding: .25em .25em .25em .5em;}
+.billcontent1{margin:.5em 0 0.5em 1em; width:30%;}
+.sft{margin:0 .5em 0 0; width: 95%;font-family: Arial, Helvetica, sans-serif;line-height: 1.5em;min-height: 8em;text-transform: uppercase;border: 1px solid #ccc;-webkit-border-radius: .5em; -moz-border-radius: .5em;
+border-radius: .5em;padding: .25em;}
+.sftmt{ margin-top:0.5px;}
+.tidanremark, .tidanremark strong {margin: 0 0 0 1em;}
+.tidanremark strong { font-weight:normal; color:#06C;}
+.tidanremark strong select{ color:#555;height:28px;border: 1px solid #CCC;}
+.tidanremark strong input{ color:#555; padding:0; font-size:1em; line-height:24px;padding-left:5px;border:1px solid #ccc;}
+.khbeizhu label{ font-weight:normal; margin-left:1em;}
+.anniu{ width:100%; margin:0 0 0 1em; margin-bottom:10px;}

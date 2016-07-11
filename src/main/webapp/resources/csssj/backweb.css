@@ -1,0 +1,53 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body {font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;font-size: 12px;}
+img {max-width: 100%;border: 0;max-width: 100%;vertical-align: middle;}svg:not(:root) {overflow: hidden;}
+*, *:before, *:after {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.container {padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;}
+@media (min-width:768px) {.container, h1 {width: 750px;}}
+@media (min-width:992px) {.container, h1 {width: 970px;}}
+@media (min-width:1200px) {.container, h1 {width: 1170px;}}
+.chandi, .baoguan {margin: 2em auto;text-align: center;}
+.chandi > div p input, .chandi form input, .chandi form textarea, .baoguan form input, .baoguan form textarea, .baoguan form p select {margin: 5px 20px 1em 0;padding: 0;border: 1px solid #ccc;-webkit-border-radius: .4em;-moz-border-radius: .4em;border-radius: .4em;padding: .375em 0 .375em .25em;background-color: #fff;color: #999;}
+.chandi p .button, .baoguan form .button {width: 30%;margin: 0 auto;}
+.chandi > div img {border-left: 2px solid #aaa;border-right: 2px solid #aaa;-moz-box-shadow: 3px 4px 4px #aaa;-webkit-box-shadow: 3px 3px 4px #aaa;box-shadow: 3px 3px 4px #aaa;}
+.chandi > div p button {width: 15%;display: inline;padding: .5em;}
+.chandi > div, .chandi > .zhuang-xiang, .chandi > section, .baoguan > form {margin: 0 auto;width:100%;}
+.chandi > .zhuang-xiang > div {width:60%;margin: 0 auto;}
+.chandi h2, .baoguan h2 {font-weight: bold;color: #333;margin-bottom: 30px;margin: 1em auto;text-align: center;font-size: 18px;padding: 0;}
+.huowuleixing, .shoufatong, .danzhengxinxi {width: 98%;margin: 1em 0 0 1em;padding: .5em 0 0 0;}
+.huowuleixing p, .danzhengxinxi p {line-height: 1.5em;margin: .5em;}
+.shoufatong h3 {margin: 10px 0 5px 0;}
+.danzhengxinxi p:first-of-type span input[type="text"] {height: 25px !important;}
+.huowuleixing p span label {margin-left: 5px;}
+#homepageSlider {position: relative;overflow: hidden;background-color: #fff;}
+#homepageSlider > .slider-wrap {position: relative;overflow: auto;height: 0;background-color: #000;}
+#homepageSlider > .slider-wrap div {position: relative;width: 100%;float: left;overflow: hidden;}
+#homepageSlider > .slider-wrap > div > div {position: relative;bottom: auto;right: auto;height: auto;padding: 4%;display: block;background-color: #000;filter: none;z-index: 0;font-size: 0.8em;text-align: left;}
+#homepageSlider > .slider-wrap > div > div > h3 {color: #e25543;text-shadow: #000 1px 1px 0;margin: 0;}
+#homepageSlider > .slider-wrap > div > div > p {color: #fff;margin: 0;}
+#homepageSlider > .slider-wrap > div > div a, #homepageSlider > .slider-wrap > div > div a:link, #homepageSlider > .slider-wrap > div > div a:visited {color: #9CF;font-weight: bold;text-decoration: none;}
+#homepageSlider > .slider-wrap > div > div a:hover {text-decoration: underline;}
+#homepageSlider > .slider-wrap img {position: relative;top: auto;left: auto;height: auto;width: inherit;margin-top: auto;}
+#homepageSlider > .slider-wrap img.logo {float: left;max-width: 70;padding: 0 10 10 0;}
+#homepageSlider > .slider-thumbnails {display: none;}
+div[id*='slider-arrow-']{position: absolute;width: 15%;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";filter: alpha(opacity=50);-moz-opacity: 0.50;-khtml-opacity: 0.50;opacity: 0.50;cursor: pointer;z-index: 10;}
+div[id*='slider-arrow-']:hover {position: absolute;width: 15%;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";filter: alpha(opacity=75);-moz-opacity: 0.75;-khtml-opacity: 0.75;opacity: 0.75;}
+#slider-arrow-left {left: 2%;}
+#slider-arrow-right {right: 2%;}
+@media only screen and (min-width: 600){#homepageSlider > .slider-thumbnails > div > span {font-size: 0.4em;}}
+@media only screen and (min-width: 768px){#homepageSlider{position:relative;z-index: 0;}#homepageSlider > .slider-thumbnails{position: relative;text-align: center;padding: 0;margin: 0;-moz-box-shadow: 0 0 25px 10 #000;-webkit-box-shadow: 0 0 25px 10 #000;box-shadow: 0 0 25px 10 #000;display: block;}
+#homepageSlider > .slider-thumbnails > .slider-arrow {position: absolute;top: 0;left: 0;height: 4px;width: 14.1%;z-index: 100;display: none;background-color: #e25543;border-left: solid 1px #e25543;border-right: solid 1px #e25543;}
+#homepageSlider > .slider-thumbnails > .thumbnails-wrap {position: relative;background-color: #232323;text-align: center;overflow: hidden;padding: 0;margin: 0;}
+#homepageSlider > .slider-thumbnails > .thumbnails-wrap img {border: solid 0 #f6efdc;margin-bottom: 5px;}
+#homepageSlider > .slider-wrap {position: relative;overflow: hidden;text-align: left;}
+#homepageSlider > .slider-wrap div {position: relative;float: left;width: 100%;height: auto;}
+#homepageSlider > .slider-wrap > div > div{position:absolute;bottom:0;left:0;width:100%;height:10%;padding:1%;display:block;background-color: rgba(0, 0, 0, 0.7);filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#7f000000', endColorstr='#7f000000');color:#fff;z-index:10;font-size:120%;}
+#homepageSlider > .slider-wrap img {position: relative;top: auto;left: auto;width: auto;height: auto;margin: 0;clear: right;display: inline;}
+#homepageSlider > .slider-thumbnails > .thumbnails-wrap > a {width: 16%;padding: 1% 1% 1% 0.5%;text-align: center;display: inline-block;vertical-align: top;border-right: solid 1px #000000;cursor: pointer;line-height: 0.75em;text-decoration: none;}
+#homepageSlider > .slider-thumbnails > .thumbnails-wrap > a:last-child {border-right: none;padding: 1% 0.5% 1% 0.5%;}
+#homepageSlider > .slider-thumbnails > .thumbnails-wrap > a > span {text-transform: uppercase;font-size: 10px;color: #868686;}
+#homepageSlider > .slider-thumbnails > .thumbnails-wrap > a > img {-moz-box-shadow: 0 0 5px #000;-webkit-box-shadow: 0 0 5px #000;box-shadow: 0 0 5px #000;border: solid 1px #c3c2c2;opacity: 0.5;}
+#homepageSlider > .slider-thumbnails > .thumbnails-wrap > a:hover img, #homepageSlider > .slider-thumbnails > .thumbnails-wrap > a.selected img {position: relative;-moz-box-shadow: 0 0 5px #fff;-webkit-box-shadow: 0 0 5px #fff;box-shadow: 0 0 5px #fff;border: solid 1px #fff;opacity: 1.0;cursor: default;}
+#homepageSlider > .slider-thumbnails > .thumbnails-wrap > a:hover span, #homepageSlider > .slider-thumbnails > .thumbnails-wrap > a.selected span {color: #fff;}}
+@media (max-width:472px) {.chandi > div{width: 100%;}.chandi > .zhuang-xiang > div {width: 100% !important;}}

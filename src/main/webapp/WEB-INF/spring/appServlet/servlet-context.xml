@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:beans="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                        http://www.springframework.org/schema/context   
+                        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+						http://www.springframework.org/schema/tx 
+						http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+                        http://www.springframework.org/schema/jdbc 
+        				http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd
+        				http://www.springframework.org/schema/mvc 
+						http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+	
+	<!-- 处理请求时返回字符串的中文乱码问题 -->
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<beans:bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<beans:property name="supportedMediaTypes">
+					<beans:list>
+						<beans:value>text/plain;charset=UTF-8</beans:value>
+						<beans:value>text/html;charset=UTF-8</beans:value>
+						<beans:value>application/json;charset=UTF-8</beans:value>
+					</beans:list>
+				</beans:property>
+			</beans:bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:resources mapping="/htm/**" location="/htm/" />
+	<mvc:resources mapping="/business/**" location="/business/" />
+	<mvc:resources location="/" mapping="/robots.txt"/>
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<beans:bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <beans:property name="prefix" value="/ueditor/jsp/" />
+        <beans:property name="suffix" value=".jsp" /><!--可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑 -->
+        <beans:property name="viewClass"
+            value="org.springframework.web.servlet.view.JstlView" />
+    </beans:bean>
+	
+		<beans:bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <beans:property name="prefix" value="/ueditor/jsp/" />
+        <beans:property name="suffix" value=".jsp" /><!--可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑 -->
+        <beans:property name="viewClass"
+            value="org.springframework.web.servlet.view.JstlView" />
+    </beans:bean>
+	<mvc:resources mapping="/uploadtixiang/**" location="/uploadtixiang/" />
+	<mvc:resources mapping="/images/**" location="/resources/images/"
+        cache-period="31556926" />
+    <mvc:resources mapping="/js/**" location="/resources/js/"
+        cache-period="31556926" />
+    <mvc:resources mapping="/css/**" location="/resources/css/"
+        cache-period="31556926" />
+    <mvc:resources mapping="/ueditor/**" location="/ueditor/"
+        cache-period="31556926" />
+    <mvc:resources mapping="/imgs/**" location="/htm/imgs/"
+        cache-period="31556926" />
+    <mvc:resources mapping="/njs/**" location="/htm/njs/"
+        cache-period="31556926" />
+    <mvc:resources mapping="/bimages/**" location="/business/bimages/"
+        cache-period="31556926" />
+    <mvc:resources mapping="/bjs/**" location="/business/bjs/"
+        cache-period="31556926" />
+    <mvc:resources mapping="/bcss/**" location="/business/bcss/"
+        cache-period="31556926" />
+               	
+	<context:component-scan base-package="com.tcb"/>
+
+	
+	<!-- 引入jdbc配置文件 -->  
+    <context:property-placeholder location="classpath:jdbc.properties" />  
+  
+    <!--创建jdbc数据源 -->  
+    <beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">  
+        <beans:property name="driverClassName" value="${jdbc.driver}" />  
+        <beans:property name="url" value="${jdbc.url}" />  
+        <beans:property name="username" value="${jdbc.username}" />  
+        <beans:property name="password" value="${jdbc.password}" />
+        <beans:property name="initialSize" value="5"/>
+		<beans:property name="maxActive" value="30"/>
+		<beans:property name="maxIdle" value="20"/>
+		<beans:property name="minIdle" value="1"/>
+		<!-- 设置在自动回收超时连接的时候打印连接的超时错误  -->  
+		<beans:property name="logAbandoned" value="true"/>  
+		<!-- 设置自动回收超时连接 -->  
+		<beans:property name="removeAbandoned"  value="true"/> 
+		<!-- 自动回收超时时间(以秒数为单位) -->  
+		<beans:property name="removeAbandonedTimeout" value="10"/> 
+		<!-- 超时等待时间以毫秒为单位  -->  
+		<beans:property name="maxWait" value="100"/>
+    </beans:bean>  
+  
+    <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->  
+    <beans:bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+        <beans:property name="dataSource" ref="dataSource" />  
+    </beans:bean>
+    
+    <!-- 开启事务注解驱动 -->  
+    <tx:annotation-driven />
+    <!-- 可通过注解控制事务 -->
+  
+    <!-- jdbc模板 -->
+    <beans:bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<beans:property name="dataSource"  ref="dataSource"></beans:property>
+	</beans:bean>
+	
+	<beans:bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <beans:property name="basename">
+        	<beans:value>messages</beans:value>
+        </beans:property>
+	</beans:bean>
+	<!-- 自动加载 -->
+	<beans:bean id="StartConfigService" class="com.tcb.dao.base.StartConfigService" init-method="init">
+		<beans:property name="dbservice" ref="dbservice" />
+	</beans:bean>
+	
+	<!-- 注解加载 -->
+    <mvc:interceptors>
+    	<mvc:interceptor >
+    		<mvc:mapping path="/**"/>
+    		<mvc:exclude-mapping path="/weixin/**"/>
+    		<mvc:exclude-mapping path="/"/>
+    		<beans:bean class="com.tcb.annotation.CheckLoginInterceptor"/>
+    	</mvc:interceptor>
+    	<mvc:interceptor >
+    		<mvc:mapping path="/**"/>
+    		<mvc:exclude-mapping path="/weixin/**"/>
+    		<mvc:exclude-mapping path="/"/>
+    		<beans:bean class="com.tcb.annotation.ExcelExportInterceptor"/>
+    	</mvc:interceptor>
+    </mvc:interceptors>
+    
+    <!-- 文件上传 -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="104857600"/>
+		<beans:property name="maxInMemorySize" value="4096"/>
+		<beans:property name="defaultEncoding" value="UTF-8"/>
+	</beans:bean>
+	<!-- 自定义注入 -->
+	
+    <!-- 应用程序生成SQL用 -->
+    <beans:bean id="dbservice" class="com.tcb.dao.base.DBService">  
+        <beans:property name="jdbcTemplate" ref="jdbcTemplate" />  
+    </beans:bean>
+
+    <!-- 全局异常配置 start -->
+	<beans:bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver"> 
+		<beans:property name="exceptionMappings">
+			<beans:props>
+				<beans:prop key="java.lang.Exception">errors/error</beans:prop>
+				<beans:prop key="java.lang.Throwable">errors/err</beans:prop>
+	       </beans:props>
+	    </beans:property>
+	    <beans:property name="statusCodes">
+	        <beans:props>
+	            <beans:prop key="errors/error">500</beans:prop>
+	            <beans:prop key="errors/404">404</beans:prop>
+	        </beans:props>
+	    </beans:property>
+	    <!-- 设置日志输出级别，不定义则默认不输出警告等错误日志信息 -->
+	    <beans:property name="warnLogCategory" value="WARN"></beans:property>
+	    <!-- 默认错误页面，当找不到上面mappings中指定的异常对应视图时，使用本默认配置 -->
+	    <beans:property name="defaultErrorView" value="errors/error"></beans:property>
+	    <!-- 默认HTTP状态码 -->
+	    <beans:property name="defaultStatusCode" value="500"></beans:property>
+	</beans:bean>
+	<!-- 全局异常配置 end -->  
+    
+    <!-- 后台处理类定义 -->
+    <beans:bean id="weixinjob" class="com.tcb.jobtask.WeiXinMessageTask">
+    	<beans:property name="dbservice" ref="dbservice" />
+    </beans:bean>
+    <beans:bean id="msmjob" class="com.tcb.jobtask.MSMSendTask">
+    	<beans:property name="dbservice" ref="dbservice" />
+    </beans:bean>
+    <beans:bean id="mailjob" class="com.tcb.jobtask.MailSendTask">
+		<property name="dbservice" ref="dbservice" />
+	</beans:bean>
+    
+    <beans:bean id="weixintask"  class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <beans:property name="targetObject" ref="weixinjob"/>
+        <beans:property name="targetMethod" value="doExecute"/>
+        <beans:property name="concurrent" value="false"/>
+    </beans:bean>
+    
+    <beans:bean id="msmtask"  class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <beans:property name="targetObject" ref="msmjob"/>
+        <beans:property name="targetMethod" value="doExecute"/>
+        <beans:property name="concurrent" value="false"/>
+    </beans:bean>
+    
+    <beans:bean id="mailtask"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="mailjob" />
+		<property name="targetMethod" value="doExecute" />
+		<property name="concurrent" value="false" />
+	</beans:bean>
+
+    <beans:bean id="erpjob" class="com.tcb.jobtask.ERPSendTask">
+    	<beans:property name="dbservice" ref="dbservice" />
+    </beans:bean>
+    
+    <beans:bean id="erptask"  class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <beans:property name="targetObject" ref="erpjob"/>
+        <beans:property name="targetMethod" value="doExecute"/>
+        <beans:property name="concurrent" value="false"/>
+    </beans:bean>
+        
+    <beans:bean id="weixinTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+	    <beans:property name="jobDetail" ref="weixintask"/>
+	    <beans:property name="cronExpression" value="0/30 * * * * ?"/>
+  </beans:bean>
+  
+  	<beans:bean id="msmTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+	    <beans:property name="jobDetail" ref="msmtask"/>
+	    <beans:property name="cronExpression" value="0/30 * * * * ?"/>
+  </beans:bean>
+  
+  <beans:bean id="ErpTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+	    <beans:property name="jobDetail" ref="erptask"/>
+	    <beans:property name="cronExpression" value="0/50 * * * * ?"/>
+  </beans:bean>
+  
+  <beans:bean id="mailTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="mailtask" />
+		<property name="cronExpression" value="0/5 * * * * ?" />
+	</beans:bean>
+    <!--  定义Job集成 -->
+    <beans:bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<beans:property name="triggers">
+			<beans:list>
+				<!-- <beans:ref bean="weixinTrigger" /> -->
+				<beans:ref bean="msmTrigger" />
+				<beans:ref bean="ErpTrigger" />
+				<beans:ref bean="mailTrigger" />
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+    
+</beans>

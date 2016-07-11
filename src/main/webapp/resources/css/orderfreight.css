@@ -1,0 +1,50 @@
+@CHARSET "UTF-8";
+
+.freight-smallsize table td {
+	font-size: 12px !important;
+	vertical-align:middle !important;
+}
+
+.freight-smallsize table th {
+	font-size: 12px !important;
+	vertical-align:middle !important;
+}
+
+.innertable td{
+	font-size: 12px !important;
+	vertical-align:middle !important;
+	text-align: center;
+	background-color: #e9eced;
+}
+
+.freight-smallsize table a {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.freight-smallsize table caption {
+	font-size: 12px !important;
+}
+
+.freight-smallsize  div {
+	font-size: 12px !important;
+}
+
+.freight-smallsize  span {
+	font-size: 12px !important;
+	margin-right: 1em;
+}
+
+.freight-smallsize  label {
+	font-size: 12px !important;
+	margin-top:.3em !important;
+	width: 4em;
+}
+
+.freight-smallsize  input, select {
+	font-size: 12px !important;
+	margin-bottom:.3em !important;
+	height: 28px !important;
+	padding: 0 6px !important;
+	height: 28px !important;
+}

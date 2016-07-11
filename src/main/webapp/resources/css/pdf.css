@@ -1,0 +1,106 @@
+@CHARSET "UTF-8";
+body {
+    color: #000 !important;
+    font-style: normal !important;
+    text-shadow: none !important;
+}
+
+h2, table td em, section, div, .billconfirmation, .billsample {
+    color: #000 !important;
+    font-style: normal !important;
+    text-shadow: none !important;
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+}
+
+    .billconfirmation table td {
+        border: 1pt solid #000 !important;
+    }
+
+    .billconfirmation div .billsample div textarea {
+        border: none !important;
+        font-size: 9pt !important;
+    }
+
+    .billconfirmation table .xiangfenghaobill td {
+        border: none !important;
+    }
+
+    .billconfirmation table td .pdfxx {
+        display: inline !important;
+        font-size: 8pt !important;
+    }
+
+
+.baohan table td {
+    border: none !important;
+}
+
+    .baohan table td input {
+        border: none !important;
+    }
+
+.baohan div textarea {
+    border: none !important;
+}
+
+.noprint {
+    text-align: center;
+}
+
+    .noprint p {
+        display: none;
+    }
+
+    .noprint input {
+        display: none;
+    }
+
+    .noprint hr {
+        display: none;
+    }
+
+
+.invoiceText td input {
+    border: none !important;
+}
+
+.invoicecustomername {
+    border: none !important;
+}
+
+.invoicecompanyname {
+    border: none !important;
+}
+
+.deltd {
+    border-top: none !important;
+    border-bottom: none !important;
+    border-right: none !important;
+    color: none !important;
+}
+.yuzhuangxiang table td input {
+    border: none !important;
+}
+
+.yuzhuangxiang p textarea {
+    border: none !important;
+}
+
+    .deltd input {
+        border: none !important;
+        display: none;
+    }
+
+    .deltd p {
+        display: none;
+    }
+
+
+.dingcangdan input {
+     border: none !important;
+}
+.dingcangdan textarea {
+     border: none !important;
+}

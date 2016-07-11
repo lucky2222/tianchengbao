@@ -1,0 +1,84 @@
+#intro {width:100%;overflow:hidden;}
+#intro div {float:left;}
+.introShow {padding:0 0 15px 0;width:350px;}
+/*.mainShow {width:346px;height:346px; padding:1px; border:1px solid #EBEBEB; position:relative; display: table;*display:block;*font-size:302px; table-layout: fixed;}*/
+/*.mainShow img{max-width:346px; max-height:346px;}*/
+.mainShow{ width:346px; height:346px; border:1px #E2E2E2 solid;}
+/*.mainShow a{ display:table-cell;width:346px; height:346px; *font-size: 302px; text-align:center; vertical-align:middle; background:#FFF;}*/
+.mainShow img{max-width:346px; max-height:346px;vertical-align:middle;}
+.scroll {margin-top:10px;width:350px;height:54px;overflow:hidden;}
+.scroll img{width:50px;height:50px;}
+.scroll a span {display:none;}
+.scroll a:hover {text-decoration:none;}
+.scroll .prevView, .scroll .nextView, .scroll .prevView.prevStop, .scroll .nextStop {float:left;margin-top:22px;width:7px;height:12px;background:url(../images/productinfo_hands_bg.png) no-repeat 0px 0px;}
+.scroll .prevView {background-position:-7px 0px;}
+.scroll .prevStop, #main .scroll .prevView.prevStop:hover {background-position:0px 0px;cursor:default;}
+#main .scroll .nextView.nextStop:hover {cursor:default;}
+.scroll .nextView, .scroll .nextStop {float:right;background-position:-28px 0px;}
+.scroll .prevView:hover {background-position:-14px 0px;}
+.scroll .nextView:hover {background-position:-35px 0px;}
+.scroll .nextStop, .scroll .nextStop:hover {background-position:-21px 0px;}
+.scroll ul {float:left;margin:0 3px 0 15px;width:310px;height:54px;overflow:hidden;}
+.scroll li {float:left;margin-bottom:2px;}
+.scroll li a {display:block;margin-right:8px;border:1px solid #ededed;padding:1px; height:50px;}
+.scroll ul li a:hover,.scroll ul li.check a,.scroll ul li.check a:hover {display:block;padding:0px;border:2px solid #3498DB;}
+
+
+div.jqZoomTitle {
+	z-index:5000;
+	text-align:center;
+	font-size:11px;
+	font-family:Tahoma;
+	height:16px;
+	padding-top:2px;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	color:#FFF;
+	background:#999;
+}
+/* www.codefans.net */
+.jqZoomPup {
+	overflow:hidden;
+	background-color:#FFF;
+	-moz-opacity:.6;
+	opacity:.6;
+	filter:alpha(opacity = 60);
+	z-index:10;
+	border-color:#c4c4c4;
+	border-style:solid;
+	cursor:crosshair;
+}
+.jqZoomPup img {
+	border:0;
+}
+.preload {
+	-moz-opacity:.8;
+	opacity:.8;
+	filter:alpha(opacity = 80);
+	color:#333;
+	font-size:12px;
+	font-family:Tahoma;
+	text-decoration:none;
+	border:1px solid #CCC;
+	background-color:white;
+	padding:8px;
+	text-align:center;
+	background-image:url(../images/loading.gif);
+	background-repeat:no-repeat;
+	background-position:43px 30px;
+	width:90px;
+* width:100px;
+	height:43px;
+*height:55px;
+	z-index:10;
+	position:absolute;
+	top:3px;
+	left:3px;
+}
+.jqZoomWindow {
+	margin-top:15px;
+	border:1px solid #EBEBEB;
+	background-color:#FFF;
+}

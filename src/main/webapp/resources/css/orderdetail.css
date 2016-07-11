@@ -1,0 +1,299 @@
+@CHARSET "UTF-8";
+
+.float {
+	float: right;
+}
+
+.hiddendiv {
+	display: none;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.detailsection {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+.detailsection td.xgbhanniu {
+	width: 350px;
+}
+
+.detailsection td.xgbhanniu button {
+	margin-right: 5px;
+}
+
+.detailsection td.xgbhanniu input, .detailsection td.xgbhanniu button {
+	float: left;
+}
+
+.detailsection textarea.speassq {
+	border: 1px solid #ddd;
+	padding: 5px;
+}
+
+.detailsection button.btn-seach {
+	vertical-align: bottom;
+}
+
+.detailsectionf h5 {
+	float: left;
+	margin: .5em 1em 1em 0;
+	font-size: 13px;
+}
+
+.detailsectionf h5.marginb0 {
+	margin-top: 0em;
+}
+
+.detailsectionf textarea.tdxx {
+	border: 1px solid #ddd;
+	margin-right: .5em;
+}
+
+.detailsectionf button.btn-seach {
+	vertical-align: bottom;
+}
+
+.editcagosection form ul {
+	margin: 0;
+	padding: 0;
+	margin: 0 auto;
+	display: block;
+}
+
+.editcagosection form ul li {
+	list-style: none;
+	display: inline-block;
+	width: 100%;
+	margin: 5px;
+	padding: 0;
+}
+
+.editcagosection form ul li h5 {
+	display: inline-block;
+	width: 12%;
+	margin: 5px 0 5px 10px;
+	text-align: left;
+	vertical-align: middle;
+	line-height: 26px;
+}
+
+.editcagosection form ul li.vertical h5 {
+	vertical-align: top;
+}
+
+.editcagosection form ul input {
+	width: 85%;
+	margin: 0;
+	text-align: left;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding-left: 5px;
+	color: #555;
+	line-height: 26px;
+}
+
+.editcagosection form ul textarea {
+	display: inline-block;
+	width: 85%;
+	margin: 0;
+	text-align: left;
+}
+
+.detailsection form ul li textarea {
+	width: 80%;
+	margin: 0;
+	text-align: left;
+}
+
+.editlabel {
+	display: inline !important;
+	margin-right: 1em !important;
+}
+
+.tab-content {
+	background: #d9edf7;
+}
+
+.panel-heading-btn h4 {
+	display: inline;
+}
+
+.panel-heading-link {
+	float: right;
+}
+
+.diffrow {
+	background-color: #7adafe !important;
+	/*filter:alpha(opacity = 80);-moz-opacity:0.8;-khtml-opacity:0.8;opacity:0.8; */
+}
+
+.smalltable td, th {
+	font-size: 13px;
+}
+
+.feeform {
+	margin: 1em 1em 1em 1em !important;
+}
+
+.feeform label {
+	width: 4em;
+}
+
+.feeformnumber {
+	width: 6em !important;
+}
+
+.editfeesection form ul {
+	margin: 0;
+	padding: 0;
+	margin: 0 auto;
+	display: block;
+}
+
+.editfeesection form ul li {
+	list-style: none;
+	display: inline-block;
+	width: 100%;
+	margin: 5px;
+	padding: 0;
+}
+
+.editfeesection form ul li label {
+	display: inline-block;
+	width: 6em;
+	margin-right: 1em;
+	text-align: left;
+}
+
+.editfeesection form ul li input {
+	width: 60%;
+}
+
+.editfeesection form ul li select {
+	width: 20%;
+}
+
+.editcontainersection form ul {
+	margin: 0;
+	padding: 0;
+	margin: 0 auto;
+	display: block;
+}
+
+.editcontainersection form ul li {
+	list-style: none;
+	display: inline-block;
+	width: 100%;
+	margin: 5px;
+	padding: 0;
+	height: 26px;
+}
+
+.editcontainersection form ul li h5 {
+	display: inline-block;
+	width: 10%;
+	text-align: left;
+}
+
+.editcontainersection form ul li input {
+	width: 80%;
+	padding-left: 5px;
+	color: #555;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.editcontainersection form ul li select {
+	width: 20%;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+}
+
+.editcagosection form ul li select {
+	height: 24px;
+}
+
+.inlinediv {
+	display: inline-block;
+}
+
+.dropdown-menu2 {
+	min-width: 0 !important;
+}
+
+.contentitem>ul {
+	list-style: none;
+	display: inline-block;
+	clear: both;;
+	width: 90%;
+	zoom: 1;
+	overflow: auto;
+}
+
+.contentitem>ul li {
+	font-weight: 700;
+	margin: .25em 0 .25em 0;
+	width: 40%;
+	float: left;
+	height: auto;
+	font-size: 13px;
+}
+
+.contentitem>ul li span {
+	color: gray;
+	font-weight: normal;
+}
+
+.contentitem>ul li:nth-of-type(odd) {
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
+.contentitem>ul li em {
+	color: #333;
+	width: 120px;
+	display: inline-block;
+	text-align: right;
+	margin-right: 1em;
+	font-style: normal;
+}
+
+.table td.minwidth {
+	min-width: 594px;
+}
+
+h5 span {
+	font-size: 12px;
+	color: #3389d1;
+}
+
+h5 em {
+	font-style: normal;
+	color: #3a87ad;
+	margin-left: 5px;
+}
+
+.col-md-3 h5 {
+	font-size: 13px;
+	margin-left: 20px;
+	font-weight: normal;
+}
+
+.col-md-3 strong {
+	margin-right: 10px;
+}
+
+.col-md-3 h5 p.leftbt {
+	display: inline-block;
+	width: 70px;
+	text-align: left;
+}
+
+.mark {
+	color: red !important;
+	background: none !important;
+}

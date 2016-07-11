@@ -1,0 +1,82 @@
+@CHARSET "UTF-8";
+
+form label {
+	width: 4em;
+}
+
+.gridtable td {
+	font-size: 14px;
+}
+
+.sptable {
+	border-collapse: collapse;
+	border: 0px solid green;
+	height: 100%;
+	width: 100%;
+}
+
+.sptable td {
+	border-top: 0;
+	border-right: 1px solid green;
+	border-bottom: 1px solid green;
+	border-left: 0;
+	text-align: center;
+	font-size: 12px;
+}
+
+.sptable tr.lastrow td {
+	border-bottom: 0;
+}
+
+.sptable tr td.lastCol {
+	border-right: 0;
+}
+
+.smallsize table td {
+	font-size: 12px !important;
+	vertical-align:middle !important;
+}
+
+.smallsize table th {
+	font-size: 12px !important;
+	vertical-align:middle !important;
+}
+
+.smallsize table a {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.smallsize table caption {
+	font-size: 12px !important;
+}
+.smallsize #OrderDate{ margin-left:15px;}
+.smallsize  div {
+	font-size: 12px !important;
+}
+.smallsize div.btn-groupfont{font-size:14px !important;}
+.smallsize  span {
+	font-size: 12px !important;
+	margin-right: 1em;
+}
+
+.smallsize  label {
+	font-size:14px !important;font-weight:normal; 
+/*	margin-top:.3em !important;*/
+	/*width:4em; text-align:right;*/ margin-right:15px;
+}
+.smallsize label.kaihr{ float:left;}
+.smallsize  input, select {
+	font-size: 12px !important;
+	margin-bottom:.3em !important;
+	/*height: 26px !important;height: 26px !important;*/
+}
+.smallsize .perpage h5 input#topagenum{ height:20px; line-height:20px; margin:0 5px; padding:2px;}
+.perpage h5 select#perpagenum{ height:20px;}
+.smallsize .form-group label{ line-height:26px; padding-right:0px;text-align:right; margin-right:0px;}
+.orderlistp{ margin-left:10px; margin-bottom:-35px; margin-top:23px; font-size:14px;}
+.orderlistp span{ color:#337AB7; margin-right:2em;}
+.cgstitle{ margin-left:1em;}
+.cgstitle p{ display:inline-block; margin-right:15px;}
+.cgstitle p label{ color:#337ab7; font-weight:normal;}
+.cgstitle p em{ font-style:normal;}

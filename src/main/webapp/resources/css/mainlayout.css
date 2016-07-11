@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family:"Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;}
+.welcome-title{text-align: right;line-height: 31px;margin-right: 21px;background-color: #f5f5f5;}
+.foot-cpright{text-align: center;background-color: #f5f5f5;}
+.leftmenu{height:auto;min-height:100%;background-color: #f5f5f5;}
+.main_contex{background-color: #f5f5f5;}
+.welcome-title span{margin-right: 12px;}
+body {padding-top: 52px;}
+a{ outline:none;}
+.modal-open{padding-right: 0 !important;overflow: inherit; !important;}
+.contextpanel{padding-top: 0px;height:auto;}
+.positionclear{position:relative;}
+.btn-title{top:0px;left:0px;z-index:10;display:block;padding:5px 8px;font-size:12px;color:#777;cursor:pointer;background-color:#fff;border:1px solid #e1e1e8;border-radius:4px 0 4px 0}
+.btn-title:hover{color:#fff;background-color:#563d7c;border-color:#563d7c}
+table.table {clear: both;margin-bottom:0px !important;max-width: none !important;border: 1px solid #ddd;}
+table.table thead .sorting,
+table.table thead .sorting_asc,
+table.table thead .sorting_desc,
+table.table thead .sorting_asc_disabled,
+table.table thead .sorting_desc_disabled {cursor: pointer;*cursor: hand;}
+table.table thead .sorting_asc { background: url('../image/sort_asc.png') no-repeat center right; }
+table.table thead .sorting_desc { background: url('../image/sort_desc.png') no-repeat center right; }
+table.table thead .sorting_asc_disabled { background: url('../image/sort_asc_disabled.png') no-repeat center right; }
+table.table thead .sorting_desc_disabled { background: url('../image/sort_desc_disabled.png') no-repeat center right; }
+#contex{margin:3px 0 0 40px;width:calc(100% - 40px);}
+/*#leftmenubox{width:60px;height:200px;cursor:move;z-index: 100000;position:absolute;left:0px;top:112px;}*/
+.pagenumline{display:inline-block;float:right;}
+.perpage{display: inline-block;margin:14px 0;}
+#homeTabContent .perpage{ margin:5px 0;}
+#homeTabContent .pagination{ margin:10px 0;}
+.perpage h5{ font-size:12px;}
+.perpage input,.perpage select{ margin:0 5px;}
+.listboxlimitheight{width:100%;max-height:300px;overflow:auto;}
+/*左侧手风琴导*/
+#leftnav{position:fixed; top:50px; left:0; z-index:99; } 
+.contenttitle{ width:50px; height:1000px; background:#013b76; position:relative; display:block;}
+/* leftnav css */
+.sideMen{ width:200px;}
+.sideMen h3{ height:50px; line-height:50px; color:#fff; font-size:16px; font-weight:normal; position:relative;}
+.sideMen h3 img{ vertical-align:middle; margin-right:15px;}
+.sideMen h3 em{ float:right; display:block; width:200px;padding-left:20px;  height:50px;background:url('../image/kkk_11.jpg') no-repeat center center; cursor:pointer; position:absolute; left:0px; top:0px; font-style:normal; color:#fff;}
+.sideMen h3 em.on{ background:url('../image/mmm_02.jpg') no-repeat center center; }
+.sideMen ul{/* padding:8px 35px; */color:#999;  }
+.sideMen ul li a{ background:url('../image/ggh_06.jpg') no-repeat 39px center; color:#999; font-size:14px; padding-left:60px; display:block; height:31px; width:160px; line-height:31px;}
+.sideMen ul li a:hover{ background:url('../image/lefthbj_02.jpg') no-repeat left center; color:#fff;}
+.contenttitle .shousnav ul{ margin-left:-40px;}
+.contenttitle .shousnav ul li{ position:relative;background:##021322;}
+.contenttitle .shousnav ul li a{ display:block; width:50px; height:50px; outline:none;}
+.contenttitle .shousnav ul li a{*margin-left:40px;}
+.contenttitle .shousnav ul li.shenpi a{ background:url(../image/shenhe_02.png) no-repeat center center; position:relative;}
+.contenttitle .shousnav ul li.shenpi a em{display:block;position:absolute;left:12px;top:12px;width:25px;height:25px;font-size:14px;font-weight:bold;letter-spacing:-2px;color:#f00;line-height:25px; text-align:center;overflow:hidden;text-overflow:ellipsis; padding-right:3px;}
+.contenttitle .shousnav ul li a:hover{ background:#003061;}
+.contenttitle .shousnav ul li.shenpi a:hover{background:url(../image/shenhe_02.png) no-repeat center center #003061; text-decoration:none;}
+.stype{ margin-left:50px;}
+.stype li{ float:left;}
+.stype li .name{ margin-bottom:10px; font-size:12px; padding-right:20px;}
+.stype li .active0{ color:#555;}
+.stype li .active1{ color:#a22759;}
+.stype li .active2{ color:#25c23f;}
+.stype li .active3{ color:#1589d8;}
+.stype li .bzt{ padding-right:100px; background:url(../image/x_03.jpg) repeat-x 33px center;}
+.stype li:last-child .bzt{ background:none;}

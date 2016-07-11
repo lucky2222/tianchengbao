@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+body{ font-family:Microsoft YaHei; font-size:11pt;}
+*{ margin:0; padding:0;}
+.clear{ clear:both;}
+.left,.center,.right{ float:left;padding-top:90pt;}
+.left{}
+input[type=checkbox]{ border:0;}
+input{ background:none; border:none;}textarea{ background:none; border:none; resize:none; font-size:11pt;}
+#sf{ width:852px; height:580px; background:url(../image/sf.jpg) no-repeat top left; margin:0 auto; margin-top:-15px;}
+#zy{ width:935px; height:430px; background:url(../image/zy.png) no-repeat top left; margin:0 auto;}
+#hs{ width:887px; height:450px; background:url(../image/hs.jpg) no-repeat top left; margin:0 auto;padding-top:105px; padding-left:55px;}
+#ems{ width:928px; height:430px; background:url(../image/ems.jpg) no-repeat top left; margin:0 auto;}
+#sf #khNo{margin-left:110px; height:32px; line-height:32px; width:280px;}
+#sf #khNo input{letter-spacing:14.3px; height:32px; line-height:32px;}
+#sf .gsllr{margin-left:110px; }
+#sf .gsllr .jjgs{ float:left; width:160px;}#sf .gsllr .jjgs textarea{max-height:33px; overflow-y:hidden;}#sf .gsllr .llr{ margin-left:60px;float:left; width:60px;}
+#sf .gsllr .llr input{height:30px; line-height:30px; font-size:11pt;}
+#sf .address{ line-height:30px;margin-left:110px;width:290px; overflow:hidden; }
+#sf .address textarea{line-height:30px; height:58px;width:290px;width:290px;overflow:hidden;}
+.qhtel{margin-left:85px; height:28px; line-height:28px;}.qhtel p{ float:left;}
+.qhtel p.qh{ width:65px;}
+.qhtel p.qh input{letter-spacing:8px;height:28px; line-height:28px;}
+.qhtel p.tel{ width:150px; margin-left:35px;}.qhtel p.tel input{letter-spacing:6.3px;height:28px; line-height:28px;}.qhtel p.qstz input{ margin-top:6px;}
+.sjr{ margin-top:15px;}
+.sjr #sjNo{margin-left:110px; height:32px; line-height:32px; width:280px;}
+.sjr #sjNo input{height:32px; line-height:32px;letter-spacing:14.3px;}
+.sjr  p.tel{letter-spacing:10px;}
+.hwlb{margin-left:60px;}
+.hwlb p{ float:left;}.hwlb p.hwnr{ width:255px; height:25px; margin-top:50px; line-height:25px;}.hwlb p.hwnr input{ line-height:25px;}.hwlb p.quet{ margin-top:40px; width:70px;}.hwlb p.quet input{text-align:center;width:100%;}
+.tjzl{ margin-top:20px;margin-left:20px;}
+.tjzl input{ width:29px; margin-left:55px; text-align:center;}
+.tjzl input.totle{ width:50px; margin-left:35px;} 
+.ywlx p{ height:17px;margin-top:4px; margin-left:1px;}
+.ywlx input{ margin-right:30px;}
+.ywlx input.jrd{ margin-right:103px;}
+.right{ margin-left:15px; padding-top:35px;}.right .dqdmzqjj{ height:65px;}
+.right .dqdmzqjj .dqdm{ float:left; width:130px; margin-top:30px;} 
+.right .dqdmzqjj .dqdm input{ width:63px; float:left; height:30px; line-height:30px; text-align:center;}
+.right .dqdmzqjj .zqzj{ float:left; margin-top:8px; margin-left:55px;}
+.right .dqdmzqjj .zqzj input{ display:block; width:18px; height:18px;} 
+.right .dqdmzqjj .zqzj input.zqj{ margin-bottom:15px;}
+.fkfas{ margin-top:20px;}
+.fkfas input{ width:20px; height:20px; margin-right:30px;}
+.fkfas input.jff{ margin-right:43px;}.fkfas input.sff{ margin-right:53px;}
+.yjzh input{ height:28px; line-height:28px; letter-spacing:14px; width:210px; margin-top:15px;padding-left:5px;}
+.dsffk{ margin-top:15px;}.dsffk input{ height:40px; line-height:20px;text-align:center; width:205px;}
+.spyxx{ margin-top:32px;}
+.spyxx div{ margin-left:5px;}
+.spyxx input{ width:98px; float:left; height:20px; line-height:20px; letter-spacing:6px;} 
+.spyxx .pjr input{ margin-left:5px;}
+.jjrqm{ margin-top:50px; margin-left:110px;}
+.jjrqm input{ width:95px; height:30px; line-height:30px;}
+/*红顺物流单*/
+#hs .top{ height:180px;}
+#hs .top .hsleft,#hs .top .hsright{ width:273pt; float:left;}#hs .top .hsright{ margin-left:15px;}
+#hs .top .hsjjrsfd .hsjjr{ width:100px; height:32px; line-height:32px; padding-left:90px; float:left;}
+#hs .top .hsjjrsfd .hsjjr input{ width:100px; height:32px; line-height:32px;text-align:center;}
+#hs .top .hsjjrsfd .hssfd{ float:left; width:95px; padding-left:70px;}
+#hs .top .hsjjrsfd .hssfd input{ height:32px; line-height:32px; width:100px; text-align:center;}
+#hs .dwname{ height:32px; line-height:32px; padding-left:100px;}#hs .dwname textarea{height:32px;width:285px; line-height:32px;}
+#hs .top .address{ padding-left:100px;}#hs .top .hsright .address{ padding-left:0px;}
+#hs .top .address textarea{ width:270px; height:70px; line-height:35px;overflow:hidden;}
+#hs .top .telyb{ margin-top:20px;}#hs .top .telyb div{ float:left;}#hs .top .telyb div.hstel input{ margin-left:110px; height:30px; line-height:30px;width:95px;}#hs .top .hsright .telyb div.hstel input{ margin-left:0px; height:30px; line-height:30px;width:115px;}
+#hs .top .telyb div.hsyb input{ height:30px; line-height:30px; margin-left:60px; width:95px;letter-spacing:9px;}#hs .top .hsright .telyb div.hsyb input{ margin-left:63px;}
+#hs .bottom .hsjjrqm{ margin-left:95px;}#hs .bottom .hsjjrqm input{ width:90px; text-align:center; height:30px; line-height:30px;}
+#hs .bottom .jcdate{ margin-left:10px; margin-top:15px;}#hs .bottom .jcdate input{ width:30px; margin-left:12px; text-align:center;}#hs .bottom .jcdate input:first-of-type{ margin-left:0px;}
+/*增益速递*/
+#zy{ padding-top:135px; padding-left:85px;}#zy .top .zyleft,#zy .top .zyright{ width:310pt; float:left;}#zy .top .jijgs{ margin-left:55px; float:left;}#zy .top .jijgs textarea{ height:30px; line-height:30px;width:205px; overflow-y:hidden;}#zy .top .contact{ margin-left:60px; float:left;}#zy .top .contact input{ width:80px; height:30px; line-height:30px;}
+#zy .adress{ margin-left:50px;}#zy .adress textarea{ width:345px; height:55px; line-height:30px;overflow:hidden;}#zy .zyright .adress textarea{ height:20px; line-height:20px;}
+#zy .tel{ margin-left:110px; margin-top:10px;}#zy .tel .phone,#zy .tel .telzj{ float:left;}#zy .tel .phone input{ height:30px; line-height:30px; width:125px;}#zy .tel .telzj input{ margin-left:55px;height:30px; line-height:30px; width:105px;}#zy .adress select{ margin-right:10px;}#zy .adress select{ margin-top:8px; margin-right:22px; background:none; border:1px solid #ddd;}#zy .adress select.zhen{ margin-left:20px;}#zy .adress input.sjadress{ width:340px; height:28px; line-height:28px;}
+/*EMS*/
+#ems{ padding-top:82pt; padding-left:100pt;}#ems .jjrxx,#ems .yjxxsm{ width:370px;}#ems .jjrxx .jjr,#ems .jjrxx .tel{ float:left;}#ems .jjrxx .jjr input{ width:130px; height:26px; line-height:26px;}#ems .jjrxx .tel input{width:130px; height:24px; line-height:24px; margin-left:45px;}#ems .content .gsname,#ems .content .khdm{ margin-left:10px; margin-top:3px; float:left;}#ems .content .gsname input{ height:20px;}#ems .content .gsname textarea{ width:190px; height:30px;}#ems .content .khdm{ margin-left:60px;}#ems .content .khdm input{ width:95px; }#ems .adress{ margin-top:5px;}#ems .adress textarea{ width:360px; height:40px; overflow:hidden;}#ems .khdh,#ems .youb{ float:left;}#ems .khdh{ margin-left:10px;}#ems .khdh input{ width:180px;}#ems .youb{ margin-left:50px;}#ems .youb input{ width:130px;}
+#ems .youb input{ letter-spacing:10px;}#ems .sjrxx{ margin-top:18px;}#ems .sjrxx textarea{ width:360px; height:55px; overflow:hidden;}
+#ems .yjxxsm{ margin-left:-45px; margin-top:35px;}#ems .yjxxsm input{ width:90px; text-align:center;}#ems .yjxxsm input.sjzl{ width:82px;}#ems .yjxxsm input.jfzl{ width:102px;}#ems .yjxxsm input.ztj{ width:110px;}
+#ems .yjxxsm input.nzwpm{ margin-top:8px; margin-left:55px; width:345px; text-align:left;}#ems .wpfl input{ width:20px; margin-right:30px; margin-top:5px;}#ems .wpfl input.wp{ margin-left:15px;}
+#ems .yjxxsm{ width:415px;}#ems .jjrqzr{ margin-top:108px; width:165px; float:right; margin-right:180px;}#ems .jjrqzr .name{ margin-left:25px;}#ems .jjrqzr .namedate input{ width:20px; margin-top:16px; text-align:center; margin-right:18px;}
+
+.noprint{ m}
+#select{ text-align:center; margin-bottom:10px;}

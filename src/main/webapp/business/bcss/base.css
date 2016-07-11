@@ -1,0 +1,56 @@
+@charset "utf-8";/* CSS Document */
+/* css reset */
+html,body{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0px;padding:0px;}
+body {background:#FFF url(../images/body_bg.png) 0px 0px repeat-x;font-size:12px;font-family:Arial;color:#333;}
+table{border-collapse:collapse; border-spacing:0px;}
+fieldset,img{ border:0px;}
+address,caption,cite,code,dfn,em,th,var{ font-style:normal; font-weight:normal;}
+ol,ul{ list-style:none;}
+select,input{vertical-align:middle;outline:none;}
+select,input,textarea {font-size:12px; font-family:Arial;}
+h1,h2,h3,h4,h5,h6{ font-size:100%; font-weight:normal;}
+q:before,q:after{ content:'';}
+abbr,acronym{ border:0px;}
+a{color:#06c; text-decoration:none;}
+a:hover{color:#f50; text-decoration:underline;}
+a:focus{-moz-outline:none; outline:none;}
+.none{ display:none;}
+
+.fl{ float:left;}
+.fr{ float:right;}
+
+.pr{ position:relative;}
+.pa{ position:absolute;}
+
+.clearfix:after{ content:".";display:block;height:0px;clear:both;visibility:hidden;}
+.clearfix{display:inline-block;} *html
+.clearfix{height:1%;}
+.clearfix{display:block;}
+.clr{ clear:both; height:0px; line-height:0px; margin:0px; padding:0px; font-size:0px; overflow:hidden;}
+
+.fb{ font-weight:bold;}
+.fstyle{ font-style:italic;}
+.under{ text-decoration:underline;}
+.tc{ text-align:center;}
+
+.colgray{ color:#D2D2D2;}
+.col888{ color:#888;}
+.col999{color:#999;}
+.colorange{ color:#f50;}
+.colred{color:#C00;}
+
+.pt10{ padding-top:10px;}
+.pl5{ padding-left:5px;}
+.pl10{ padding-left:10px;}
+.pl25{ padding-left:25px;}
+.pl65{ padding-left:65px;}
+.pr10{ padding-right:10px;}
+.pr20{ padding-right:20px;}
+.mt5{ margin-top:5px;}
+.mt10{ margin-top:10px;}
+.mt15{ margin-top:15px;}
+.mt20{ margin-top:20px;}
+.mt25{ margin-top:25px;}
+.mt30{ margin-top:30px;}
+.mb15{ margin-bottom:15px;}
